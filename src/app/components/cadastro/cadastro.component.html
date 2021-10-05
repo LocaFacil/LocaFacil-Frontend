@@ -1,0 +1,105 @@
+<div class="container-login100">
+    <div class="wrap-login100">
+
+            <form class="login100-form validate-form text-center">
+                <span *ngIf="perfil === 1" class="login100-form-title py-2">
+                    Realize seu cadastro
+                </span>
+
+                <mat-radio-group class="section" aria-label="Select an option">
+                    <mat-radio-button (click)="perfilCliente()" color="primary" value="1" checked>Cliente</mat-radio-button>
+                    <mat-radio-button (click)="perfilEmpresa()" color="primary" value="2">Empresa</mat-radio-button>
+                </mat-radio-group>
+
+                <div *ngIf="perfil === 1" class="wrap-input100 validate-input" data-validate = "Digite um nome">
+                    <input class="input100" [(ngModel)]="cliente.name" [formControl]="nome" required type="text" name="name" placeholder="Nome" maxlength="50">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">engineering</i>
+                    </span>
+                </div>
+
+                <div *ngIf="perfil === 2" class="wrap-input100 validate-input" data-validate = "Digite um nome">
+                    <input class="input100" [(ngModel)]="empresa.name" [formControl]="nome" required type="text" name="nameEmpresa" placeholder="Nome Empresa" maxlength="50">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">engineering</i>
+                    </span>
+                </div>
+                
+
+                <div *ngIf="perfil === 1" class="wrap-input100 validate-input" data-validate = "Digite um email válido: ex@abc.xyz">
+                    <input class="input100" [(ngModel)]="cliente.email" [formControl]="email" required type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">alternate_email</i>
+                    </span>
+                </div>
+
+                <div *ngIf="perfil === 2" class="wrap-input100 validate-input" data-validate = "Digite um email válido: ex@abc.xyz">
+                    <input class="input100" [(ngModel)]="empresa.email" [formControl]="email" required type="text" name="emailEmpresa" placeholder="Email Empresa">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">alternate_email</i>
+                    </span>
+                </div>
+
+                <div *ngIf="perfil === 2" class="wrap-input100 validate-input">
+                    <input class="input100" [(ngModel)]="empresa.phone" required type="text" name="telefone" placeholder="Telefone">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">stay_primary_portrait</i>
+                    </span>
+                </div>
+
+                <div *ngIf="perfil === 2" class="wrap-input100 validate-input">
+                    <input class="input100" [(ngModel)]="empresa.cnpj" required type="text" name="Cnjp" placeholder="Cnpj">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">business</i>
+                    </span>
+                </div>
+
+                <div *ngIf="perfil === 1" class="wrap-input100 validate-input" data-validate = "Digite uma senha válida">
+                    <input class="input100" [(ngModel)]="cliente.password" [formControl]="senha" required [type]="hide ? 'password' : 'text'" name="password" id="senha" placeholder="Senha" pattern="[A-Za-z0-9]{8,}">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">password</i>
+                    </span>
+                </div>
+
+                <div *ngIf="perfil === 2" class="wrap-input100 validate-input">
+                    <input class="input100" [(ngModel)]="empresa.password" [formControl]="senha" required [type]="hide ? 'password' : 'text'" name="passwordEMpresa" id="senha" placeholder="Senha empresa" pattern="[A-Za-z0-9]{8,}">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">password</i>
+                    </span>
+                </div>
+
+                <!-- <div id="message">
+                    <p id="length" class="invalid pl-3">Senha minímo <b class="pl-1"> 8 caracteres.</b></p>
+                </div> -->
+
+                <div class="form-check">
+                    <button class="show" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <label id="alteraM" class="form-check-label pl-0">
+                        Mostrar Senha
+                    </label>
+                </div>
+
+                <div class="container-login100-form-btn">
+
+                        <a href="login"><button type="button" class="login102-form-btn">
+                            Cancelar
+                        </button></a>
+
+                        <button (click)="create()" [disabled]="!validaCampos()" class="login103-form-btn">
+                            Cadastrar
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+

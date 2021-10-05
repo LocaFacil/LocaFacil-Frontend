@@ -1,0 +1,41 @@
+mat-drawer-container {
+    background: #FC9722;
+}
+.container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 13rem;
+    color: white;
+    background-color: #666666;
+}
+
+img {
+    width: 100%;
+    height: 7rem;
+    margin: .8rem auto 1rem auto;
+
+}
+
+.sidenav a {
+    color: #FC9722;
+}
+
+.sidenav i {
+    margin-right: .6rem;
+}
+
+.colorFocus:hover {
+    background-color: rgb(53, 47, 36);
+}
+
+.sidenav-content {
+    background: #FC9722;
+}
+
+.menu {
+    margin: 1rem 0 0 1rem;
+    color: white;
+    background: #666666;;
+}

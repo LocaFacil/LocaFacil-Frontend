@@ -1,0 +1,118 @@
+<div class="container-login100">
+    <div class="wrap-login100">
+
+        <form class="login100-form validate-form text-center">
+
+            <div id="cacambaPeq" class="login100-peq">
+                <img class="imgPeq pt-2" src="assets/img/cacamba.svg" alt="IMG">
+
+                <div class="form-check form-check-inline pt-3">
+                    <input class="form-check-input" value="1" type="radio" name="pequena" id="pequena">
+                    <label class="form-check-label pl-2" for="pequena">
+                        Caçamba Pequena (3x3)
+                    </label>
+                </div>
+
+                <p class="form-parag">Selecione a Quantidade:</p>
+
+                <select id="quant"class="form-select-quant">
+                    <option selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                 </select>
+            </div>
+
+            <div class="divisa">
+
+            </div>
+
+            <div id="cacambaBig" class="login100-big">
+                <img class="imgBig pt-2" src="assets/img/cacamba.svg" alt="IMG">
+
+                <div class="form-check form-check-inline pt-3">
+                    <input class="form-check-input" value="2" type="radio" name="grande" id="grande">
+                    <label class="form-check-label pl-2" for="grande">
+                        Caçamba Grande (5x5)
+                    </label>
+                </div>
+
+                <p class="form-parag">Selecione a Quantidade:</p>
+
+                <select id="quant"class="form-select-quant">
+                    <option selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                 </select>
+            </div>
+            
+            <div id="campoCpf" class="wrap-input100 validate-input" data-validate = "Digite um CPF válido">
+                <input matInput class="input100" [mask]="getCpfCnpjMask()"
+                [(ngModel)]="cpf_cnpj" type="text" name="cpf" placeholder="Digite um CPF" required>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="material-icons">travel_explore</i>
+                </span>
+            </div>
+
+            <div id="campoPhone" class="wrap-input100 validate-input" data-validate = "Digite um Telefone">
+                <input class="input100" type="tel" mask="{{maskPhone}}" name="telefone" placeholder="Telefone">
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="material-icons">call</i>
+                </span>
+            </div>
+
+            <div id="campoAdress" class="wrap-input100 validate-input" data-validate = "Digite um Endereço">
+                <input class="input100" type="text" name="endereco" placeholder="Endereço">
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="material-icons">place</i>
+                </span>
+            </div>
+
+            <div id="campoNumber" class="wrap-input100 validate-input" data-validate = "Digite um numero de Endereço">
+                <input matInput class="input100" type="text" name="numero" placeholder="Nº">
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="material-icons">numbers</i>
+                </span>
+            </div>
+
+            <select id="campoType" class="form-select">
+                <option selected>Tipo de Entulho</option>
+                <option value="11">Borracha</option>
+                <option value="12">Isopor</option>
+                 <option value="13">Outro</option>
+             </select>
+
+            <div id="campoDate" class="wrap-input100 validate-input" data-validate = "Digite uma data">
+                <input matInput class="input100" type="text" mask="{{maskDtDia}}" name="data" autocomplete="off" placeholder="Data">
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                    <i class="material-icons">event_bush</i>
+                </span>
+            </div>
+            
+            <div class="container-login100-form-btn">
+
+                    <button class="login101-form-btn">
+                        Cadastrar
+                    </button>
+            </div>
+        </form>
+    </div>
+</div>
