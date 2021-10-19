@@ -30,14 +30,10 @@ export class RedefinirComponent implements OnInit {
   }
 
   reset() {
-
-    debugger;
     this.service.reset(this.resetP).subscribe(() => {
       this.toast.success('Enviamos um email com a nova senha. Verifique seu email.', 'Recuperar Senha');
     }, ex=> {
-      console.log(ex);
-      console.log('teste');
-      
+
     })
   }
 }

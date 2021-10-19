@@ -38,6 +38,9 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { RedefinirComponent } from './components/redefinir/redefinir.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { CompanyUpdateComponent } from './components/company-update/company-update.component';
+import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-create.component';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { ClienteUpdateComponent } from './components/cliente/cliente-update/clie
     CadastroComponent,
     RedefinirComponent,
     ClienteUpdateComponent,
+    CompanyUpdateComponent,
+    DumpsterCreateComponent,
   ],
   imports: [
     BrowserModule,

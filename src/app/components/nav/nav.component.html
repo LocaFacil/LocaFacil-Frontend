@@ -6,7 +6,7 @@
                 <i class="material-icons">home</i>
                 Solicitação
             </a>
-            <a class="colorFocus" mat-list-item routerLink="clientManager">
+            <a *ngIf="type === '[ROLE_USER]'" class="colorFocus" mat-list-item routerLink="clientManager" >
                 <i class="material-icons">fact_check</i>
                 Gerenciamento
             </a>
@@ -14,14 +14,25 @@
                 <i class="material-icons">assignment</i>
                 Gerenciamento
             </a>
+
+            <a *ngIf="type === '[ROLE_ADMIN]'" class="colorFocus" mat-list-item routerLink="dumpster/create">
+                <i class="material-icons">add_circle</i>
+                Criar Caçamba
+            </a>
+            
+            <a *ngIf="type === '[ROLE_USER]'" class="colorFocus" mat-list-item routerLink="client/update/{{id}}">
+                <i class="material-icons">settings</i>
+                Meus Dados
+            </a>
+
+            <a *ngIf="type === '[ROLE_ADMIN]'" class="colorFocus" mat-list-item routerLink="company/update/{{id}}">
+                <i class="material-icons">settings</i>
+                Meus Dados
+            </a>
+
             <a class="colorFocus" mat-list-item (click)="logout()">
                 <i class="material-icons">logout</i>
                 Sair
-            </a>
-
-            <a class="colorFocus" mat-list-item routerLink="client/update/{{id}}">
-                <i class="material-icons">settings</i>
-                Atualizar Dados
             </a>
         </mat-nav-list>
     </mat-drawer>

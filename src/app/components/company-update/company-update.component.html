@@ -1,0 +1,69 @@
+<div class="container-login100">
+    <div class="wrap-login100">
+
+            <form class="login100-form validate-form text-center">
+                <span class="login100-form-title py-3">
+                    Editar Dados
+                </span>
+
+                <div  class="wrap-input100 validate-input" data-validate = "Digite um nome">
+                    <input class="input100"  [(ngModel)]="companyUpade.name" [formControl]="nome" required type="text" name="nameEmpresa" placeholder="Nome Empresa" maxlength="50">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">engineering</i>
+                    </span>
+                </div>
+
+                <div  class="wrap-input100 validate-input" data-validate = "Digite um email válido: ex@abc.xyz">
+                    <input class="input100"  [(ngModel)]="companyUpade.email" [formControl]="email" required type="text" name="emailEmpresa" placeholder="Email Empresa">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">alternate_email</i>
+                    </span>
+                </div>
+
+                <div  class="wrap-input100 validate-input">
+                    <input class="input100" [(ngModel)]="companyUpade.phone" required type="text" name="telefone" placeholder="Telefone">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">stay_primary_portrait</i>
+                    </span>
+                </div>
+
+                <div  class="wrap-input100 validate-input">
+                    <input class="input100"  [(ngModel)]="companyUpade.cnpj" required type="text" name="Cnjp" placeholder="Cnpj">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">business</i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" [(ngModel)]="companyUpade.password" [formControl]="senha" required [type]="hide ? 'password' : 'text'" name="passwordEMpresa" id="senha" placeholder="Senha empresa" pattern="[A-Za-z0-9]{8,}">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="material-icons">password</i>
+                    </span>
+                </div>
+
+                <!-- <div id="message">
+                    <p id="length" class="invalid pl-3">Senha minímo <b class="pl-1"> 8 caracteres.</b></p>
+                </div> -->
+
+                <div class="form-check">
+                    <button class="show" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <label id="alteraM" class="form-check-label pl-0">
+                        Mostrar Senha
+                    </label>
+                </div>
+
+                <div (click)="update()" class="container-login100-form-btn">
+                        <button  class="login103-form-btn">
+                            Salvar
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>

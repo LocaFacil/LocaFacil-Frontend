@@ -1,8 +1,10 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-nav',
@@ -10,6 +12,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+
+
 
   resposta = null;
   data: string;

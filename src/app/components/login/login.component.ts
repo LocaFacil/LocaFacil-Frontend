@@ -38,8 +38,6 @@ export class LoginComponent implements OnInit {
       var infoClient = infoUser[0].split(" ");
       var infoType = infoUser[1].split(" ");
       
-      console.log(infoClient[1], infoType[2]);
-      
       localStorage.setItem('Id', infoClient[1]);
       localStorage.setItem('TypeUser', infoType[2]);
 

@@ -52,13 +52,11 @@ export class CadastroComponent implements OnInit {
 
   perfilCliente(): any {
     this.perfil = 1;
-    console.log(this.perfil);
+
   }
 
   perfilEmpresa(): any {
     this.perfil = 2
-    console.log(this.perfil);
-    
   }
 
   create(): void {

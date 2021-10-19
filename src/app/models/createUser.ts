@@ -17,10 +17,23 @@ export interface CreateCompany {
 export interface UpdateUser {
     id: any;
     name: string;
-    cpf: string;
+    email: string;
+    password: string;
+}
+
+export interface UpdateCompany {
+    id: any;
+    name: string;
     email: string;
     phone: string;
+    cnpj: string;
     password: string;
-    termsUse: string;
-    profiles: [];
+}
+
+
+export interface CreateDumpster {
+    id: any,
+    size: any,
+    price: string,
+    typetrash: any
 }

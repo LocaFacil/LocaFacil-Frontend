@@ -2,20 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CreateUser, UpdateUser } from 'src/app/models/createUser';
+import { CreateUser, UpdateCompany, UpdateUser } from 'src/app/models/createUser';
 import { CreateuserService } from 'src/app/services/createuser.service';
 
 @Component({
-  selector: 'app-cliente-update',
-  templateUrl: './cliente-update.component.html',
-  styleUrls: ['./cliente-update.component.css']
+  selector: 'app-company-update',
+  templateUrl: './company-update.component.html',
+  styleUrls: ['./company-update.component.css']
 })
-export class ClienteUpdateComponent implements OnInit {
+export class CompanyUpdateComponent implements OnInit {
 
-  clientUpade: UpdateUser = {
+  companyUpade: UpdateCompany = {
     id: '',
     name: '',
     email: '',
+    phone: '',
+    cnpj: '',
     password: '',
 
   }
@@ -37,31 +39,31 @@ export class ClienteUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.clientUpade.id = this.route.snapshot.paramMap.get('id');
-    this.findById();
+    this.companyUpade.id = this.route.snapshot.paramMap.get('id');
+    this.findByIdCompany();
   }
 
   validaCampos(): boolean {
     return this.nome.valid && this.email.valid && this.senha.valid
   }
 
-  findById(): void {
-    this.service.findById(this.clientUpade.id).subscribe(resposta => {
-      this.clientUpade.name = resposta.name;
-      this.clientUpade.email = resposta.email;
-      this.clientUpade.password = resposta.password;
+  findByIdCompany(): void {
+    this.service.findByIdCompany(this.companyUpade.id).subscribe(resposta => {
+      this.companyUpade.name = resposta.name;
+      this.companyUpade.email = resposta.email;
+      this.companyUpade.phone = resposta.phone;
+      this.companyUpade.cnpj = resposta.cnpj;
+      this.companyUpade.password = resposta.password;
       //this.clientUpade = resposta;
     })
   }
 
   update(): void {
-    if (this.perfil === 1) {
-      this.service.update(this.clientUpade).subscribe(() => {
+      this.service.updateCompany(this.companyUpade).subscribe(() => {
         this.toast.success('Dados atualizados com sucesso', 'Editar Dados');
       }, ex => {
         this.toast.error('Erro ao editar, verifique os dados. Tente novamente.', 'Falha ao Editar Dados!');
       })
-    }
-  }
 
+  }
 }
