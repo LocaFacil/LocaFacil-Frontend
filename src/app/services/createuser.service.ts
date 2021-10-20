@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_CONFIG } from '../config/api.config';
+import { dumpsterList } from '../models/cliente';
 import { CreateCompany, CreateDumpster, CreateUser, UpdateCompany, UpdateUser } from '../models/createUser';
 
 @Injectable({
@@ -17,6 +18,10 @@ export class CreateuserService {
 
   findByIdCompany(id: any): Observable<UpdateCompany> {
     return this.http.get<UpdateCompany>(`${API_CONFIG.baseUrl}/company/${id}`);
+  }
+
+  findAll(): Observable <dumpsterList[]> {
+    return this.http.get<dumpsterList[]>(`${API_CONFIG.baseUrl}/dumpster`);
   }
 
   create(cliente: CreateUser): Observable<CreateUser> {
@@ -38,5 +43,6 @@ export class CreateuserService {
   updateCompany(company: UpdateCompany): Observable<UpdateCompany> { 
     return this.http.put<UpdateCompany>(`${API_CONFIG.baseUrl}/company/${company.id}`, company);
   }
+
 
 }

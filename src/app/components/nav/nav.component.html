@@ -15,6 +15,11 @@
                 Gerenciamento
             </a>
 
+            <a *ngIf="type === '[ROLE_ADMIN]'" class="colorFocus" mat-list-item routerLink="dumpster/list">
+                <i class="material-icons">list_alt</i>
+                Visualizar Caçambas
+            </a>
+
             <a *ngIf="type === '[ROLE_ADMIN]'" class="colorFocus" mat-list-item routerLink="dumpster/create">
                 <i class="material-icons">add_circle</i>
                 Criar Caçamba

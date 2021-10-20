@@ -1,0 +1,47 @@
+<div class="conteiner">
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+      
+          <ng-container  matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> Tamanho da caçamba </th>
+            <td mat-cell *matCellDef="let element"> {{element.size === 1 ? 'Caçamba Media' : 'Caçamba Grande'}} </td>
+          </ng-container>
+      
+          <ng-container  matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Preço </th>
+            <td  mat-cell *matCellDef="let element"> {{element.price}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Tipo de Entulho </th>
+            <td mat-cell *matCellDef="let element"> {{element.typetrash}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="situacao">
+            <th mat-header-cell *matHeaderCellDef> Situação </th>
+            <td mat-cell *matCellDef="let element"> {{element.status[0] === 'AVAILABLE' ? 'ACESSÍVEL' : 'OCUPADA'}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let element">
+    
+              <a  routerLink="">
+                <i matTooltip="Editar"  matTooltipClass="custom-tooltip" matTooltipPosition="before" class="material-icons edit">edit</i>
+              </a>
+              <a routerLink="">
+                <i matTooltip="Excluir"  matTooltipClass="custom-tooltip" matTooltipPosition="after" class="material-icons delete">delete</i>
+              </a>
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons 
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+</div>

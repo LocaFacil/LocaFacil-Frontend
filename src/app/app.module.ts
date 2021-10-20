@@ -27,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 //Compomentes do sistema
 import { NavComponent } from './components/nav/nav.component';
@@ -40,6 +41,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { CompanyUpdateComponent } from './components/company-update/company-update.component';
 import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-create.component';
+import { DumpsterListComponent } from './components/dumpster-list/dumpster-list.component';
 
 
 @NgModule({
@@ -54,6 +56,7 @@ import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-c
     ClienteUpdateComponent,
     CompanyUpdateComponent,
     DumpsterCreateComponent,
+    DumpsterListComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,7 @@ import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-c
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatTooltipModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
