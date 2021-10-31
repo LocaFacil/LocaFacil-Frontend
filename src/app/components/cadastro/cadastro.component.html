@@ -1,8 +1,8 @@
 <div class="container-login100">
     <div class="wrap-login100">
 
-            <form class="login100-form validate-form text-center">
-                <span  class="login100-form-title py-2">
+            <form *ngIf="perfil === 1" class="login100-form validate-form text-center">
+                <span  *ngIf="perfil === 1" class="login100-form-title py-2">
                     Realize seu cadastro
                 </span>
 
@@ -11,83 +11,77 @@
                     <mat-radio-button (click)="perfilEmpresa()" color="primary" value="2">Empresa</mat-radio-button>
                 </mat-radio-group>
 
-                <div *ngIf="perfil === 1" class="wrap-input100 validate-input" data-validate = "Digite um nome">
-                    <input class="input100" [(ngModel)]="cliente.name" [formControl]="nome" required type="text" name="name" placeholder="Nome" maxlength="50">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">engineering</i>
-                    </span>
-                </div>
+                <mat-form-field *ngIf="perfil === 1" class="w100" appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput [formControl]="nome" [(ngModel)]="cliente.name" required placeholder="Nome" type="text" maxlength="50">
+                    <mat-error *ngIf="nome.hasError('required')">Digite seu nome</mat-error>
+                </mat-form-field>
 
-                <div *ngIf="perfil === 2" class="wrap-input100 validate-input" data-validate = "Digite um nome">
-                    <input class="input100" [(ngModel)]="empresa.name" [formControl]="nome" required type="text" name="nameEmpresa" placeholder="Nome Empresa" maxlength="50">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">engineering</i>
-                    </span>
-                </div>
-                
+                <mat-form-field *ngIf="perfil === 1" class="w100" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput [formControl]="email" [(ngModel)]="cliente.email" required placeholder="Email" type="text">
+                    <mat-error *ngIf="email.hasError('required')">Digite seu email</mat-error>
+                </mat-form-field>
 
-                <div *ngIf="perfil === 1" class="wrap-input100 validate-input" data-validate = "Digite um email válido: ex@abc.xyz">
-                    <input class="input100" [(ngModel)]="cliente.email" [formControl]="email" required type="text" name="email" placeholder="Email">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">alternate_email</i>
-                    </span>
-                </div>
-
-                <div *ngIf="perfil === 2" class="wrap-input100 validate-input" data-validate = "Digite um email válido: ex@abc.xyz">
-                    <input class="input100" [(ngModel)]="empresa.email" [formControl]="email" required type="text" name="emailEmpresa" placeholder="Email Empresa">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">alternate_email</i>
-                    </span>
-                </div>
-
-                <div *ngIf="perfil === 2" class="wrap-input100 validate-input">
-                    <input class="input100" [(ngModel)]="empresa.phone" required type="text" name="telefone" placeholder="Telefone">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">stay_primary_portrait</i>
-                    </span>
-                </div>
-
-                <div *ngIf="perfil === 2" class="wrap-input100 validate-input">
-                    <input class="input100" [(ngModel)]="empresa.cnpj" required type="text" name="Cnjp" placeholder="Cnpj">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">business</i>
-                    </span>
-                </div>
-
-                <div *ngIf="perfil === 1" class="wrap-input100 validate-input" data-validate = "Digite uma senha válida">
-                    <input class="input100" [(ngModel)]="cliente.password" [formControl]="senha" required [type]="hide ? 'password' : 'text'" name="password" id="senha" placeholder="Senha" pattern="[A-Za-z0-9]{8,}">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">password</i>
-                    </span>
-                </div>
-
-                <div *ngIf="perfil === 2" class="wrap-input100 validate-input">
-                    <input class="input100" [(ngModel)]="empresa.password" [formControl]="senha" required [type]="hide ? 'password' : 'text'" name="passwordEMpresa" id="senha" placeholder="Senha empresa" pattern="[A-Za-z0-9]{8,}">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">password</i>
-                    </span>
-                </div>
-
-                <!-- <div id="message">
-                    <p id="length" class="invalid pl-3">Senha minímo <b class="pl-1"> 8 caracteres.</b></p>
-                </div> -->
-
-                <div class="form-check">
-                    <button class="show" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-form-field *ngIf="perfil === 1" class="w100" appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input [(ngModel)]="cliente.password" [formControl]="senha" required matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <label id="alteraM" class="form-check-label pl-0">
-                        Mostrar Senha
-                    </label>
+                    <mat-error *ngIf="senha.hasError('required')">Digite sua senha</mat-error>
+                </mat-form-field>
+
+                <div class="container-login100-form-btn">
+
+                        <a href="login"><button type="button" class="login102-form-btn">
+                            Cancelar
+                        </button></a>
+
+                        <button (click)="create()" [disabled]="!validaCampos()" class="login103-form-btn">
+                            Cadastrar
+                        </button>
                 </div>
+            </form>
+
+            <form *ngIf="perfil === 2" class="empresa-form validate-form text-center">
+                <span  *ngIf="perfil === 2" class="login100-form-title py-2">
+                    Realize seu cadastro
+                </span>
+
+                <mat-form-field *ngIf="perfil === 2" class="pl-10 pr-10 d-inlineblock" appearance="outline">
+                    <mat-label>Nome Empresa</mat-label>
+                    <input matInput [formControl]="nome" [(ngModel)]="empresa.name" required placeholder="Nome Empresa" type="text" maxlength="50">
+                    <mat-error *ngIf="nome.hasError('required')">Digite seu nome</mat-error>
+                </mat-form-field>
+
+                <mat-form-field *ngIf="perfil === 2" class="d-inlineblock" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput [formControl]="email" [(ngModel)]="empresa.email" required placeholder="Email Empresa" type="text">
+                    <mat-error *ngIf="email.hasError('required')">Digite seu email</mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field *ngIf="perfil === 2" class="pl-10 pr-10 d-inlineblock" appearance="outline">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput [formControl]="telefone" [(ngModel)]="empresa.phone" required placeholder="Telefone" type="text">
+                    <mat-error *ngIf="telefone.hasError('required')">Digite seu email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field *ngIf="perfil === 2" class="d-inlineblock" appearance="outline">
+                    <mat-label>Cnpj</mat-label>
+                    <input matInput [formControl]="cnpj" [(ngModel)]="empresa.cnpj" required placeholder="Cnpj" type="text">
+                    <mat-error *ngIf="cnpj.hasError('required')">Digite um cnpj</mat-error>
+                </mat-form-field>
+
+                <mat-form-field *ngIf="perfil === 2" class="pl-10 w90" appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input [(ngModel)]="empresa.password" [formControl]="senha" required matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="senha.hasError('required')">Digite sua senha</mat-error>
+                </mat-form-field>
 
                 <div class="container-login100-form-btn">
 

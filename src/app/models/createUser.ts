@@ -5,6 +5,14 @@ export interface CreateUser {
     password: string;
 }
 
+export interface UserInfo {
+    iduser: any;
+    cpf: any;
+    telefone: any;
+    endereco: any;
+    numero?: any;
+}
+
 export interface CreateCompany {
     id: any;
     name: string;
@@ -35,5 +43,6 @@ export interface CreateDumpster {
     id: any,
     size: any,
     price: string,
-    typetrash: any
+    typetrash: any,
+    status?: any; 
 }

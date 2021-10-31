@@ -1,5 +1,5 @@
 <mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="sidenav" mode="over">
+    <mat-drawer #drawer class="sidenav" mode="side" opened>
         <img src="assets/img/imagen-nav.svg" alt="Imagem de navegação">
         <mat-nav-list class="nav-list">
             <a class="colorFocus" mat-list-item routerLink="solicitacao">
@@ -15,7 +15,7 @@
                 Gerenciamento
             </a>
 
-            <a *ngIf="type === '[ROLE_ADMIN]'" class="colorFocus" mat-list-item routerLink="dumpster/list">
+            <a *ngIf="type === '[ROLE_ADMIN]'" class="colorFocus" mat-list-item routerLink="dumpster/list/{{id}}">
                 <i class="material-icons">list_alt</i>
                 Visualizar Caçambas
             </a>
@@ -50,3 +50,8 @@
     </div>
   
   </mat-drawer-container>
+
+  <!-- <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+  </mat-drawer-container> -->

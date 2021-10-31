@@ -6,6 +6,7 @@ export interface Cliente {
 }
 
 export interface dumpsterList {
+    id?: string;
     tamanho: string;
     preco: string;
     tipoEntulho: any;

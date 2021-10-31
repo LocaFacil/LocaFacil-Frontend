@@ -6,58 +6,37 @@
                     Editar Dados
                 </span>
 
-                <div  class="wrap-input100 validate-input" data-validate = "Digite um nome">
-                    <input class="input100"  [(ngModel)]="companyUpade.name" [formControl]="nome" required type="text" name="nameEmpresa" placeholder="Nome Empresa" maxlength="50">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">engineering</i>
-                    </span>
-                </div>
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput [formControl]="nome" [(ngModel)]="companyUpade.name" required placeholder="Nome Empresa" type="text">
+                    <mat-error *ngIf="nome.hasError('required')">Digite um nome</mat-error>
+                </mat-form-field>
 
-                <div  class="wrap-input100 validate-input" data-validate = "Digite um email válido: ex@abc.xyz">
-                    <input class="input100"  [(ngModel)]="companyUpade.email" [formControl]="email" required type="text" name="emailEmpresa" placeholder="Email Empresa">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">alternate_email</i>
-                    </span>
-                </div>
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput [formControl]="email" [(ngModel)]="companyUpade.email" required placeholder="Email Empresa" type="text">
+                    <mat-error *ngIf="email.hasError('required')">Digite seu email</mat-error>
+                </mat-form-field>
 
-                <div  class="wrap-input100 validate-input">
-                    <input class="input100" [(ngModel)]="companyUpade.phone" required type="text" name="telefone" placeholder="Telefone">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">stay_primary_portrait</i>
-                    </span>
-                </div>
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput [(ngModel)]="companyUpade.phone" required placeholder="Telefone" type="text" name="telefone">
+                </mat-form-field>
 
-                <div  class="wrap-input100 validate-input">
-                    <input class="input100"  [(ngModel)]="companyUpade.cnpj" required type="text" name="Cnjp" placeholder="Cnpj">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">business</i>
-                    </span>
-                </div>
 
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" [(ngModel)]="companyUpade.password" [formControl]="senha" required [type]="hide ? 'password' : 'text'" name="passwordEMpresa" id="senha" placeholder="Senha empresa" pattern="[A-Za-z0-9]{8,}">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="material-icons">password</i>
-                    </span>
-                </div>
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Cnpj</mat-label>
+                    <input matInput [(ngModel)]="companyUpade.cnpj" required placeholder="Cnjp" type="text" name="Cnjp">
+                </mat-form-field>
 
-                <!-- <div id="message">
-                    <p id="length" class="invalid pl-3">Senha minímo <b class="pl-1"> 8 caracteres.</b></p>
-                </div> -->
-
-                <div class="form-check">
-                    <button class="show" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-form-field class="wrap-input100" appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input [(ngModel)]="companyUpade.password" [formControl]="senha" required matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <label id="alteraM" class="form-check-label pl-0">
-                        Mostrar Senha
-                    </label>
-                </div>
+                    <mat-error *ngIf="senha.hasError('required')">Digite sua senha</mat-error>
+                </mat-form-field>
 
                 <div (click)="update()" class="container-login100-form-btn">
                         <button  class="login103-form-btn">

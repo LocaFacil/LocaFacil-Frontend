@@ -18,6 +18,7 @@ export class NavComponent implements OnInit {
   resposta = null;
   data: string;
   type: string;
+  
 
   constructor(private router: Router,
     private authService: AuthService,

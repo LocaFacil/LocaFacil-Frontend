@@ -30,12 +30,16 @@ img {
     background-color: rgb(53, 47, 36);
 }
 
+
 .sidenav-content {
     background: #FC9722;
+    height: 70px;
 }
 
 .menu {
     margin: 1rem 0 0 1rem;
     color: white;
-    background: #666666;;
+    background: #666666;
+    
 }
+

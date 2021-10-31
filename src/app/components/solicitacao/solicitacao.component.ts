@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CreateuserService } from 'src/app/services/createuser.service';
 
 @Component({
   selector: 'app-solicitacao',
@@ -8,10 +10,24 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class SolicitacaoComponent implements OnInit {
   cpf_cnpj: any;
+  idClient: any;
  
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router,
+    private service: CreateuserService
+    ) {}
 
   ngOnInit(): void {
+    this.idClient = localStorage.getItem('Id');
+    this.verifyInfo();
+  }
+
+  verifyInfo() {
+    debugger;
+    this.service.findByIdInfo(this.idClient).subscribe(resposta => {
+      console.log(resposta);
+    })
   }
 
   isCPF(): boolean{

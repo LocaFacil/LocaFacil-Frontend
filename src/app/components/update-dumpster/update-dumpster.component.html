@@ -3,7 +3,7 @@
 
             <form class="login100-form validate-form text-center">
                 <span class="login100-form-title py-3">
-                    Cadastrar Caçamba
+                    Editar Caçamba
                 </span>
 
                 <mat-form-field class="w100" appearance="outline">
@@ -16,23 +16,17 @@
                     </mat-select>
                     <mat-error *ngIf="tamanhosControl.hasError('required')">Selecione Tamanho da Caçamba</mat-error>
                 </mat-form-field>
-
+                
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Preço</mat-label>
                     <input matInput [formControl]="precoControl" [(ngModel)]="createDumpster.price" [mask]="maskMoney" required placeholder="Valor do aluguel" type="text">
                     <mat-error *ngIf="precoControl.hasError('required')">Digite um valor</mat-error>
                 </mat-form-field>
 
-                <!-- <mat-form-field class="w100" appearance="outline">
-                    <mat-label>Tipo de Entulho</mat-label>
-                    <mat-select [formControl]="TipoControl" [(ngModel)]="createDumpster.typetrash" required>
-                      <mat-option>Selecione</mat-option>
-                      <mat-option *ngFor="let tipoEntulho of tipoEntulhos" [value]="tipoEntulho.name">
-                        {{tipoEntulho.name}}
-                      </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="TipoControl.hasError('required')">Selecione Tipo de Entulho</mat-error>
-                </mat-form-field> -->
+                <mat-form-field class="w100" appearance="outline">
+                  <mat-label>Situação</mat-label>
+                  <input matInput  [(ngModel)]="createDumpster.status" type="text" name="situacao" disabled>
+                </mat-form-field>
 
                 <div (click)="create()" class="container-login100-form-btn">
                         <button  class="login103-form-btn">
@@ -42,3 +36,4 @@
             </form>
         </div>
     </div>
+

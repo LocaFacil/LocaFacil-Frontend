@@ -1,0 +1,27 @@
+<div class="container-login100">
+    <div class="wrap-login100">
+
+            <form class="login100-form validate-form text-center">
+                <span class="login100-form-title py-3">
+                    Deletar Caçamba
+                </span>
+
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Tamanho da Caçamba</mat-label>
+                    <input matInput  [(ngModel)]="createDumpster.size" type="text" name="size" disabled>
+                </mat-form-field>
+
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Preço</mat-label>
+                    <input matInput [(ngModel)]="createDumpster.price" [mask]="maskMoney" type="text" name="preco" disabled>
+                </mat-form-field>
+
+                <div (click)="delete()" class="container-login100-form-btn">
+                        <button  class="login103-form-btn">
+                            Excluir
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+

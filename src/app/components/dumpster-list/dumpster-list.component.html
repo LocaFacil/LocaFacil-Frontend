@@ -26,10 +26,10 @@
             <th mat-header-cell *matHeaderCellDef> Ações </th>
             <td mat-cell *matCellDef="let element">
     
-              <a  routerLink="">
+              <a  (click)="navigateUpdade(element.id)">
                 <i matTooltip="Editar"  matTooltipClass="custom-tooltip" matTooltipPosition="before" class="material-icons edit">edit</i>
               </a>
-              <a routerLink="">
+              <a (click)="navigateDelete(element.id)">
                 <i matTooltip="Excluir"  matTooltipClass="custom-tooltip" matTooltipPosition="after" class="material-icons delete">delete</i>
               </a>
             </td>

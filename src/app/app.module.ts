@@ -42,6 +42,9 @@ import { ClienteUpdateComponent } from './components/cliente/cliente-update/clie
 import { CompanyUpdateComponent } from './components/company-update/company-update.component';
 import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-create.component';
 import { DumpsterListComponent } from './components/dumpster-list/dumpster-list.component';
+import { UpdateDumpsterComponent } from './components/update-dumpster/update-dumpster.component';
+import { DumpsterDeleteComponent } from './components/dumpster-delete/dumpster-delete.component';
+import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-info.component';
 
 
 @NgModule({
@@ -57,6 +60,9 @@ import { DumpsterListComponent } from './components/dumpster-list/dumpster-list.
     CompanyUpdateComponent,
     DumpsterCreateComponent,
     DumpsterListComponent,
+    UpdateDumpsterComponent,
+    DumpsterDeleteComponent,
+    ClienteInfoComponent,
   ],
   imports: [
     BrowserModule,

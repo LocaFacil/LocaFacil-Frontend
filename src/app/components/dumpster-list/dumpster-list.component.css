@@ -41,8 +41,10 @@ td {
 .edit {
     color: rgb(13, 206, 7);
     padding-right: 20px;
+    cursor: pointer;
 }
 
 .delete {
     color: red;
+    cursor: pointer;
 }
