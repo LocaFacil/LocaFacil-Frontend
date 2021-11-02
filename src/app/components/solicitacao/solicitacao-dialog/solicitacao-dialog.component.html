@@ -1,20 +1,16 @@
-<div class="container-login100">
-    <div class="wrap-login100">
-
-            <form *ngIf="perfil === 1" class="login100-form validate-form text-center">
-                <span  *ngIf="perfil === 1" class="login100-form-title py-2">
-                    Complete seu cadastro
-                </span>
-
+<h1 mat-dialog-title>Complete seu cadastro</h1>
+<h3 mat-dialog-title>Para poder ter acesso a solicitação!</h3>
+            <form  class="login100-form validate-form text-center">
+                
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Cpf</mat-label>
-                    <input matInput [formControl]="cpf" [(ngModel)]="clienteInfo.cpf" required placeholder="Digite seu cpf" type="text" maxlength="11">
+                    <input matInput [formControl]="cpf" mask="{{maskCpf}}" [(ngModel)]="clienteInfo.cpf" required placeholder="Digite seu cpf" type="text">
                     <mat-error *ngIf="cpf.hasError('required')">Digite seu cpf</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Telefone</mat-label>
-                    <input matInput [formControl]="telefone" [(ngModel)]="clienteInfo.phone" required placeholder="Telefone" type="text">
+                    <input matInput [formControl]="telefone" mask="{{maskPhone}}" [(ngModel)]="clienteInfo.phone" required placeholder="Telefone" type="text">
                     <mat-error *ngIf="telefone.hasError('required')">Digite seu Telefone</mat-error>
                 </mat-form-field>
 
@@ -24,12 +20,17 @@
                     <mat-error *ngIf="endereco.hasError('required')">Digite seu Telefone</mat-error>
                 </mat-form-field>
 
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Número</mat-label>
+                    <input matInput [formControl]="numero" [(ngModel)]="clienteInfo.addressnum" required placeholder="Nº" type="text">
+                    <mat-error *ngIf="numero.hasError('required')">Informe seu número de endereço</mat-error>
+                </mat-form-field>
+
                 <div class="container-login100-form-btn">
 
-                        <button (click)="create()" [disabled]="!validaCampos()" class="login103-form-btn">
+                        <button (click)="create()" [disabled]="!validaCampos()" class="login101-form-btn">
                             Cadastrar
                         </button>
                 </div>
             </form>
-        </div>
-    </div>
+

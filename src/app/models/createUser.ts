@@ -6,11 +6,14 @@ export interface CreateUser {
 }
 
 export interface UserInfo {
-    iduser: any;
+    id?: any;
+    name?: any;
+    email?: any;
+    password?: any;
     cpf: any;
-    telefone: any;
-    endereco: any;
-    numero?: any;
+    phone: any;
+    address: any;
+    addressnum?: any;
 }
 
 export interface CreateCompany {

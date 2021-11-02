@@ -19,10 +19,10 @@ export class ClienteInfoComponent implements OnInit {
   }
 
   clienteInfo: UserInfo = {
-    iduser: '',
+    id: '',
     cpf: '',
-    telefone: '',
-    endereco: ''
+    phone: '',
+    address: ''
   }
 
 

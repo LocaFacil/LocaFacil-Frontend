@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CreateuserService } from 'src/app/services/createuser.service';
+import { SolicitacaoDialogComponent } from './solicitacao-dialog/solicitacao-dialog.component';
 
 @Component({
   selector: 'app-solicitacao',
@@ -11,11 +13,13 @@ import { CreateuserService } from 'src/app/services/createuser.service';
 export class SolicitacaoComponent implements OnInit {
   cpf_cnpj: any;
   idClient: any;
+  retorno: any;
  
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
-    private service: CreateuserService
+    private service: CreateuserService,
+    public dialog: MatDialog
     ) {}
 
   ngOnInit(): void {
@@ -23,10 +27,17 @@ export class SolicitacaoComponent implements OnInit {
     this.verifyInfo();
   }
 
-  verifyInfo() {
-    debugger;
+  openDialog() {
+    this.dialog.open(SolicitacaoDialogComponent);
+  }
+
+  verifyInfo() { 
     this.service.findByIdInfo(this.idClient).subscribe(resposta => {
-      console.log(resposta);
+      this.retorno = resposta;
+      if (this.retorno == false) {
+        // this.router.navigate([`client/info/${this.idClient}`])
+        this.openDialog();
+      }
     })
   }
 

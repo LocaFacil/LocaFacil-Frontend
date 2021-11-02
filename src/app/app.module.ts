@@ -45,6 +45,8 @@ import { DumpsterListComponent } from './components/dumpster-list/dumpster-list.
 import { UpdateDumpsterComponent } from './components/update-dumpster/update-dumpster.component';
 import { DumpsterDeleteComponent } from './components/dumpster-delete/dumpster-delete.component';
 import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-info.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SolicitacaoDialogComponent } from './components/solicitacao/solicitacao-dialog/solicitacao-dialog.component';
 
 
 @NgModule({
@@ -63,6 +65,7 @@ import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-
     UpdateDumpsterComponent,
     DumpsterDeleteComponent,
     ClienteInfoComponent,
+    SolicitacaoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +93,7 @@ import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-
     MatListModule,
     MatCardModule,
     MatTooltipModule,
+    MatDialogModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
