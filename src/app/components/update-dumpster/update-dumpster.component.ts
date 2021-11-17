@@ -57,16 +57,11 @@ export class UpdateDumpsterComponent implements OnInit {
 
     this.service.findByIdDumpster(this.createDumpster.id).subscribe( resposta => {
       this.createDumpster = resposta;
-      if (this.createDumpster.status == 'AVAILABLE') {
-        this.createDumpster.status = 'ACESSÍVEL';
-      } else {
-        this.createDumpster.status = 'OCUPADA';
-      }
-      if (this.createDumpster.size == 1) {
-        this.createDumpster.size = 'Media';
-      } else {
-        this.createDumpster.size = 'Grande';
-      }
+      // if (this.createDumpster.status == 'AVAILABLE') {
+      //   this.createDumpster.status = 'ACESSÍVEL';
+      // } else {
+      //   this.createDumpster.status = 'OCUPADA';
+      // }
     })
   }
 

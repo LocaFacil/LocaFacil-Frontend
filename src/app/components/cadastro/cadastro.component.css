@@ -288,6 +288,9 @@ width: 100%;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    display: inline;
+    position: absolute;
+    padding-top: 5%;
   }
 
 /*------------------------------------------------------------------
@@ -385,7 +388,7 @@ width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
-    padding: 40px 130px 33px 95px;
+    padding: 20px 130px 33px 95px;
     box-shadow: 3px 3px 3px rgb(94, 89, 89);
   }
   
@@ -496,7 +499,7 @@ width: 100%;
   @media (max-width: 1092px) {
     .wrap-login100 {
       height: 500px;
-      padding: 100px 90px 33px 85px;
+      padding: 30px 90px 33px 85px;
     }
   
     .login100-pic {

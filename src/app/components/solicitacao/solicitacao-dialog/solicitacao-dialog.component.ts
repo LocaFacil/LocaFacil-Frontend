@@ -13,9 +13,9 @@ import { CreateuserService } from 'src/app/services/createuser.service';
 export class SolicitacaoDialogComponent implements OnInit {
   
   clienteInfo: UserInfo = {
-    id: '',
     name: '',
     email: '',
+    password: '',
     cpf: '',
     phone: '',
     address: '',
@@ -44,32 +44,15 @@ export class SolicitacaoDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.clienteInfo.id = localStorage.getItem('Id');
-    this.findById();
   }
 
-  findById(): void {
-    debugger;
-    this.service.findByIdClient(this.clienteInfo.id).subscribe(resposta => {
-      this.clienteInfo.name = resposta.name;
-      this.clienteInfo.email = resposta.email;
-      console.log(resposta);
-      
-    })
-  }
+
 
   validaCampos(): boolean {
     return this.nome.valid && this.email.valid
   }
 
-  // findById(): void {
-  //   this.service.findById(this.clientUpade.id).subscribe(resposta => {
-  //     this.clientUpade.name = resposta.name;
-  //     this.clientUpade.email = resposta.email;
-  //     this.clientUpade.password = resposta.password;
-  //     //this.clientUpade = resposta;
-  //   })
-  // }
-
+ 
   maskCpf = '000.000.000-00';
   maskPhone = '00 0000-0000||00 0 0000-0000';
 
@@ -77,7 +60,7 @@ export class SolicitacaoDialogComponent implements OnInit {
       debugger;
       this.service.updateInfoClient(this.clienteInfo).subscribe(() => {
         this.toast.success('Informações atualizadas com sucesso', 'Cadastro');
-        this.router.navigate(['login']);
+        location.reload();
       }, ex => {
         this.toast.error('Erro ao cadastrar, verifique os dados. Tente novamente.', 'Falha ao realizar Cadastro!');
       })

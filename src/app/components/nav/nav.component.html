@@ -2,7 +2,7 @@
     <mat-drawer #drawer class="sidenav" mode="side" opened>
         <img src="assets/img/imagen-nav.svg" alt="Imagem de navegação">
         <mat-nav-list class="nav-list">
-            <a class="colorFocus" mat-list-item routerLink="solicitacao">
+            <a *ngIf="type === '[ROLE_USER]'" class="colorFocus" mat-list-item routerLink="solicitacao">
                 <i class="material-icons">home</i>
                 Solicitação
             </a>

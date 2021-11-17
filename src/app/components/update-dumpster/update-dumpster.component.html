@@ -7,8 +7,8 @@
                 </span>
 
                 <mat-form-field class="w100" appearance="outline">
-                    <mat-label>Tamanho da Caçamba</mat-label>
-                    <mat-select [formControl]="tamanhosControl" [(ngModel)]="createDumpster.size" required>
+                    <mat-label>{{createDumpster.size == 1 ? 'Media' : 'Grande'}}</mat-label>
+                    <mat-select  [(ngModel)]="createDumpster.size" required>
                       <mat-option>Selecione</mat-option>
                       <mat-option *ngFor="let tamanho of tamanhos" [value]="tamanho.type">
                         {{tamanho.name}}
@@ -25,7 +25,7 @@
 
                 <mat-form-field class="w100" appearance="outline">
                   <mat-label>Situação</mat-label>
-                  <input matInput  [(ngModel)]="createDumpster.status" type="text" name="situacao" disabled>
+                  <input matInput  value="{{createDumpster.status == 'AVAILABLE' ? 'ACESSIVEL' : 'OCUPADO' }}" type="text" name="situacao" readonly>
                 </mat-form-field>
 
                 <div (click)="create()" class="container-login100-form-btn">

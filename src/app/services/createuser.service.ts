@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_CONFIG } from '../config/api.config';
 import { dumpsterList } from '../models/cliente';
-import { CreateCompany, CreateDumpster, CreateUser, UpdateCompany, UpdateUser, UserInfo } from '../models/createUser';
+import { CreateCompany, CreateDumpster, CreateUser, Solicitacao, UpdateCompany, UpdateUser, UserInfo } from '../models/createUser';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +16,10 @@ export class CreateuserService {
     return this.http.get<UpdateUser>(`${API_CONFIG.baseUrl}/user/${id}`);
   }
 
-  findByIdClient(id: any): Observable<UserInfo> {
-    debugger;
-    return this.http.get<UserInfo>(`${API_CONFIG.baseUrl}/user/${id}`);
-  }
+  // findByIdClient(id: any): Observable<UserInfo> {
+  //   debugger;
+  //   return this.http.get<UserInfo>(`${API_CONFIG.baseUrl}/user/${id}`);
+  // }
 
   findByIdInfo(id: any): Observable<CreateUser> {
     return this.http.get<CreateUser>(`${API_CONFIG.baseUrl}/user/check/${id}`);
@@ -50,13 +50,17 @@ export class CreateuserService {
     return this.http.post<CreateDumpster>(`${API_CONFIG.baseUrl}/dumpster/create`, dumpster)
   }
 
+  createSolicitacao(solicitacao: Solicitacao): Observable<Solicitacao> {
+    debugger;
+    return this.http.post<Solicitacao>(`${API_CONFIG.baseUrl}/request/create`, solicitacao)
+  }
+
   update(cliente: UpdateUser): Observable<UpdateUser> {
     return this.http.put<UpdateUser>(`${API_CONFIG.baseUrl}/user/${cliente.id}`, cliente);
   }
 
   updateInfoClient(clienteInfo: UserInfo): Observable<UserInfo> {
-    debugger;
-    return this.http.put<UserInfo>(`${API_CONFIG.baseUrl}/user/${clienteInfo.id}`, clienteInfo);
+    return this.http.put<UserInfo>(`${API_CONFIG.baseUrl}/user/check/${clienteInfo.id}`, clienteInfo);
   }
 
 

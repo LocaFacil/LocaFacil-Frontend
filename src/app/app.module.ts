@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxMaskModule } from 'ngx-mask';
 
@@ -28,6 +28,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 //Compomentes do sistema
 import { NavComponent } from './components/nav/nav.component';
@@ -47,6 +49,8 @@ import { DumpsterDeleteComponent } from './components/dumpster-delete/dumpster-d
 import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-info.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SolicitacaoDialogComponent } from './components/solicitacao/solicitacao-dialog/solicitacao-dialog.component';
+import localePt from "@angular/common/locales/pt";
+import { registerLocaleData } from "@angular/common";
 
 
 @NgModule({
@@ -94,6 +98,8 @@ import { SolicitacaoDialogComponent } from './components/solicitacao/solicitacao
     MatCardModule,
     MatTooltipModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
@@ -101,7 +107,11 @@ import { SolicitacaoDialogComponent } from './components/solicitacao/solicitacao
       positionClass: 'toast-bottom-left'
     })
   ],
-  providers: [AuthInterceptorProvider],
+  providers: [AuthInterceptorProvider, 
+    {
+      provide: LOCALE_ID,
+      useValue: "pt-br",
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

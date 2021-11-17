@@ -46,6 +46,17 @@ export interface CreateDumpster {
     id: any,
     size: any,
     price: string,
-    typetrash: any,
-    status?: any; 
+    typetrash?: any,
+    status?: any;
+    statusid?: any;
+}
+
+export interface Solicitacao {
+    id?: any;
+    size: any;
+    address: any;
+    addressnum: any;
+    typetrash: any;
+    dateinit: any;
+    datefinal:any;
 }

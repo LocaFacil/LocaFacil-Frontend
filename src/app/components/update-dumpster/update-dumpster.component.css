@@ -47,6 +47,9 @@ iframe {
     border: none !important;
 }
 
+.situacao {
+  opacity: .5;
+}
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 

@@ -42,7 +42,7 @@ export class DumpsterCreateComponent implements OnInit {
     id: '',
     size: '',
     price: '',
-    typetrash: ''
+    statusid: 1
   }
 
 
@@ -59,7 +59,7 @@ export class DumpsterCreateComponent implements OnInit {
   maskMoney = '00,00||000,00||0.000,00';
 
   create(): void {
-    debugger;
+    
       this.service.createDumpster(this.createDumpster).subscribe(() => {
         this.toast.success('Caçamba criada com sucesso', 'Criar caçamba');
       }, ex => {
