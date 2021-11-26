@@ -58,24 +58,6 @@ iframe {
 }
 
 
-.form-check {
-  display: flex;
-  justify-content: start;
-}
-
-.form-check-label {
-  font-family: Poppins-Medium;
-  color: #666666;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-}
-
-.show:focus {
-  color: #57b846;
-}
-
-
 /*------------------------------------------------------------------
 [ Button ]*/
 
@@ -164,23 +146,7 @@ width: 100%;
     box-shadow: none;
   }
 
-  .form-check {
-    display: flex;
-    justify-content: start;
-  }
-  
-  .form-check-label {
-    font-family: Poppins-Medium;
-    color: #666666;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-  }
-  
-  .show:focus {
-    color: #57b846;
-  }
-
+ 
   .mat-radio-button ~ .mat-radio-button {
     margin-left: 100px;
 
@@ -221,66 +187,6 @@ width: 100%;
   width: 97%;
 }
 
-.txt2 {
-    font-family: Bold;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #1126EA;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
-  }
-  
-  .txt2:hover {
-    text-decoration: underline;
-    color:#57b846;
-  }
-  
-  .txt3 {
-    text-align: center;
-    font-family: Poppins-Bold;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 36px;
-    width: 100%;
-    display: block;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  color: #666666;
-  }
-  
-  
-  .txt4 {
-  width: 100%;
-  display: block;
-  text-align: center;
-  font-family: Poppins-Bold;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 36px;
-  color: #666666;
-  }
-  
-  
-  .txt5 {
-    width: 100%;
-    text-align:  center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Poppins-Bold;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 28px;
-    color: #666666;
-  }
-  
-  
    /*//////////////////////////////////////////////////////////////////
   [ login ]*/
   
@@ -352,20 +258,7 @@ width: 100%;
     margin-bottom: 10px;
   }
   
-  .input100 {
-    font-family: Poppins-Medium;
-    font-size: 15px;
-    line-height: 1.5;
-    color: #666666;
-  
-    display: block;
-    width: -webkit-fill-available;
-    background: #e6e6e6;
-    height: 50px;
-    border-radius: 25px;
-    padding: 0 30px 0 68px;
-  }
-  
+
   #message {
     display:none;
     background: #fff;

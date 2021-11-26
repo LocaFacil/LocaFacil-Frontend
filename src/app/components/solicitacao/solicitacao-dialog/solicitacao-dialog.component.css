@@ -3,15 +3,6 @@ input {
     border: none;
 }
 
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus, input:focus {
-  border-color: transparent !important;
-}
-
 /*---------------------------------------------*/
 button {
     outline: none !important;
@@ -58,23 +49,6 @@ iframe {
 }
 
 
-.form-check {
-  display: flex;
-  justify-content: start;
-}
-
-.form-check-label {
-  font-family: Poppins-Medium;
-  color: #666666;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-}
-
-.show:focus {
-  color: #57b846;
-}
-
 /*------------------------------------------------------------------
 [ Button ]*/
 
@@ -88,97 +62,6 @@ a {
     text-decoration: none;
 }
 
-.login102-form-btn {
-font-size: 12px;
-line-height: 1.5;
-color: #fff;
-text-transform: uppercase;
-font-weight: 700;
-box-shadow: 0 5px 0 #6b0303;
-
-height: 50px;
-border-radius: 25px;
-background: #C70303;
-
-align-items: center;
-width: 100%;
-
-}
-
-.login102-form-btn:hover {
-  background: #333333;
-  box-shadow: 0 5px 0 #000000;
-}
-
-.login102-form-btn:active {
-  position: relative;
-  top: 5px;
-  box-shadow: none;
-}
-
-.login102-form-btn:disabled {
-  background: #9aa198;
-  box-shadow: none;
-}
-
-  .login103-form-btn {
-    font-size: 12px;
-    line-height: 1.5;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    box-shadow: 0 5px 0 #0F159C;
-  
-  
-    height: 50px;
-    border-radius: 25px;
-    background: #0F159C;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    align-items: center;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-    width: 100%;
-    margin-top: 15px;
-
-  }
-  
-  .login103-form-btn:hover {
-    background: #333333;
-    box-shadow: 0 5px 0 #000000;
-  }
-  
-  .login103-form-btn:active {
-    position: relative;
-    top: 5px;
-    box-shadow: none;
-  }
-
-  .login103-form-btn:disabled {
-    background: #9aa198;
-    box-shadow: none;
-  }
-
-  .form-check {
-    display: flex;
-    justify-content: start;
-  }
-  
-  .form-check-label {
-    font-family: Poppins-Medium;
-    color: #666666;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-  }
-  
-  .show:focus {
-    color: #57b846;
-  }
 
   .mat-radio-button ~ .mat-radio-button {
     margin-left: 100px;
@@ -204,12 +87,6 @@ width: 100%;
     margin-bottom: 1rem;
   }
 
-/*------------------------------------------------------------------
-[ Alert validate ]*/
-
-.validate-input {
-  position: relative;
-}
 
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/

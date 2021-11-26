@@ -3,14 +3,6 @@ input {
     border: none;
 }
 
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus, input:focus {
-  border-color: transparent !important;
-}
 
 /*---------------------------------------------*/
 button {
@@ -23,9 +15,6 @@ button:hover {
     cursor: pointer;
 }
 
-iframe {
-    border: none !important;
-}
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
@@ -42,50 +31,6 @@ iframe {
   padding: 15px;
   padding-top: 20px;
   background: #FC9722;
-}
-
-
-.form-check {
-  display: flex;
-  justify-content: start;
-}
-
-.form-check-label {
-  font-family: Poppins-Medium;
-  color: #666666;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-}
-
-.show:focus {
-  color: #57b846;
-}
-
-
-.symbol-input100 {
-  font-size: 15px;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  border-radius: 25px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 35px;
-  pointer-events: none;
-  color: #666666;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
 
@@ -190,22 +135,6 @@ padding: 0 25px;
     box-shadow: none;
   }
 
-  .form-check {
-    display: flex;
-    justify-content: start;
-  }
-  
-  .form-check-label {
-    font-family: Poppins-Medium;
-    color: #666666;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-  }
-  
-  .show:focus {
-    color: #57b846;
-  }
 
   .mat-radio-button ~ .mat-radio-button {
     margin-left: 100px;
@@ -213,70 +142,6 @@ padding: 0 25px;
 
   }
 
-
-/*//////////////////////////////////////////////////////////////////
-[ Utility ]*/
-
-.txt2 {
-    font-family: Bold;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #1126EA;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
-  }
-  
-  .txt2:hover {
-    text-decoration: underline;
-    color:#57b846;
-  }
-  
-  .txt3 {
-    text-align: center;
-    font-family: Poppins-Bold;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 36px;
-    width: 100%;
-    display: block;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  color: #666666;
-  }
-  
-  
-  .txt4 {
-  width: 100%;
-  display: block;
-  text-align: center;
-  font-family: Poppins-Bold;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 36px;
-  color: #666666;
-  }
-  
-  
-  .txt5 {
-    width: 100%;
-    text-align:  center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Poppins-Bold;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 28px;
-    color: #666666;
-  }
-  
-  
    /*//////////////////////////////////////////////////////////////////
   [ login ]*/
   
