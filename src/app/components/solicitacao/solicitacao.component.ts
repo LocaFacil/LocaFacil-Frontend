@@ -4,8 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
-import { Solicitacao } from 'src/app/models/createUser';
+import { Solicitacao, UserInfo } from 'src/app/models/createUser';
 import { CreateuserService } from 'src/app/services/createuser.service';
+import { TermsDialogComponent } from '../terms-dialog/terms-dialog.component';
 import { SolicitacaoDialogComponent } from './solicitacao-dialog/solicitacao-dialog.component';
 
 interface tipos {
@@ -22,6 +23,7 @@ export class SolicitacaoComponent implements OnInit {
   cpf_cnpj: any;
   idClient: any;
   retorno: any;
+  retornoTerms: any;
 
   solicitacao: Solicitacao = {
     id: '',
@@ -33,6 +35,18 @@ export class SolicitacaoComponent implements OnInit {
     datefinal: ''
   }
 
+  infoClient: UserInfo = {
+    id: '',
+    name: '',
+    email: '',
+    password: '',
+    cpf: '',
+    phone: '',
+    address: '',
+    addressnum: '',
+    termsUse: '',
+  }
+
   tipos: tipos[] = [
     {name: 'Isopor'},
     {name: 'Borracha'},
@@ -42,6 +56,7 @@ export class SolicitacaoComponent implements OnInit {
     {name: 'Metal'},
     {name: 'Outros'},
   ];
+  
 
   tamanhoPeq(): any {
     this.solicitacao.size = 1;
@@ -76,12 +91,29 @@ export class SolicitacaoComponent implements OnInit {
     this.dialog.open(SolicitacaoDialogComponent);
   }
 
+  openDialogTerms() {
+    this.dialog.open(TermsDialogComponent);
+  }
+
+  verifyTerms() { 
+    
+    this.service.findAllTermo(this.idClient).subscribe(resposta => {
+      
+      this.retornoTerms = resposta;
+      if (this.retornoTerms == false) {
+        this.openDialogTerms();
+      }
+    })
+  }
+
   verifyInfo() { 
     this.solicitacao.size = 1;
     this.service.findByIdInfo(this.idClient).subscribe(resposta => {
       this.retorno = resposta;
       if (this.retorno == false) {
         this.openDialog();
+      } else {
+        this.verifyTerms();
       }
     })
   }
@@ -90,14 +122,14 @@ export class SolicitacaoComponent implements OnInit {
  maskPhone = '0000-00000';
 
  create(): void {
-  debugger;
+  
    let newDateStart: moment.Moment = moment.utc(this.solicitacao.dateinit).local();
-   let newDateFinal: moment.Moment = moment.utc(this.solicitacao.datefinal).local();
+   
    this.solicitacao.dateinit = newDateStart.format("DD/MM/YYYY");
-   this.solicitacao.datefinal = newDateFinal.format("DD/MM/YYYY");
-    debugger;
+   
   this.service.createSolicitacao(this.solicitacao).subscribe(() => {
     this.toast.success('Solicitação realizada com sucesso', 'Solicitação');
+    location.reload();
   }, ex => {
     this.toast.error('Erro ao solicitar caçamba, verifique os dados. Tente novamente.', 'Falha ao solicitar caçamba!');
   })

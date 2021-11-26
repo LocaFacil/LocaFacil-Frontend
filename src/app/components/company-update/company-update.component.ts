@@ -26,6 +26,10 @@ export class CompanyUpdateComponent implements OnInit {
   hide = true;
   perfil = 1;
 
+  maskCnpj = '00.000.000/0000-00';
+  maskPhone = '00 0000-0000||00 0 0000-0000';
+
+
   nome = new FormControl(null, Validators.minLength(3));
   email = new FormControl(null, Validators.email);
   senha = new FormControl(null, Validators.minLength(8));

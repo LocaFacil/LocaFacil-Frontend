@@ -14,6 +14,7 @@ export interface UserInfo {
     phone: any;
     address: any;
     addressnum?: any;
+    termsUse?: any;
 }
 
 export interface CreateCompany {
@@ -51,6 +52,13 @@ export interface CreateDumpster {
     statusid?: any;
 }
 
+export interface UpdateDumpster {
+    id: any,
+    size: any,
+    price: string,
+    statusid: any;
+}
+
 export interface Solicitacao {
     id?: any;
     size: any;
@@ -59,4 +67,27 @@ export interface Solicitacao {
     typetrash: any;
     dateinit: any;
     datefinal:any;
+}
+
+export interface ClientList {
+    id?: any;
+    size: any;
+    address: any;
+    addressnum: any;
+    typetrash: any;
+    dateinit: any;
+    datefinal:any;
+}
+
+export interface ClientEntregar {
+    id?: any;
+    size: any;
+    address: any;
+    addressnum: any;
+    typetrash: any;
+    dateinit: any;
+    datefinal:any;
+    clientid:any;
+    dumpsterid:any;
+    statusid: any;
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CreateDumpster, CreateUser, UpdateCompany, UpdateUser } from 'src/app/models/createUser';
+import { CreateDumpster, CreateUser, UpdateCompany, UpdateDumpster, UpdateUser } from 'src/app/models/createUser';
 import { CreateuserService } from 'src/app/services/createuser.service';
 
 interface tamanho {
@@ -40,6 +40,13 @@ export class UpdateDumpsterComponent implements OnInit {
     status: ''
   }
 
+  dumpster: UpdateDumpster = {
+    id: '',
+    size: '',
+    price: '',
+    statusid: 1
+  }
+
 
   constructor(
     private service: CreateuserService,
@@ -68,8 +75,11 @@ export class UpdateDumpsterComponent implements OnInit {
   maskMoney = '00,00||000,00||0.000,00';
 
   create(): void {
-    debugger;
-      this.service.createDumpster(this.createDumpster).subscribe(() => {
+    this.dumpster.id = this.createDumpster.id;
+    this.dumpster.size = this.createDumpster.size;
+    this.dumpster.price = this.createDumpster.price;
+
+      this.service.updateDumpster(this.dumpster).subscribe(() => {
         this.toast.success('Caçamba editada com sucesso', 'Editar caçamba');
       }, ex => {
         this.toast.error('Erro ao editar caçamba, verifique os dados. Tente novamente.', 'Falha ao editar Caçamba!');

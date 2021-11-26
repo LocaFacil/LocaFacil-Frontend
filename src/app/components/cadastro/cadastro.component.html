@@ -60,13 +60,13 @@
 
                 <mat-form-field *ngIf="perfil === 2" class="pl-10 pr-10 d-inlineblock" appearance="outline">
                     <mat-label>Telefone</mat-label>
-                    <input matInput [formControl]="telefone" [(ngModel)]="empresa.phone" required placeholder="Telefone" type="text">
+                    <input matInput [formControl]="telefone" [(ngModel)]="empresa.phone" required placeholder="Telefone" [mask]="maskPhone" type="text">
                     <mat-error *ngIf="telefone.hasError('required')">Digite seu email</mat-error>
                 </mat-form-field>
 
                 <mat-form-field *ngIf="perfil === 2" class="d-inlineblock" appearance="outline">
                     <mat-label>Cnpj</mat-label>
-                    <input matInput [formControl]="cnpj" [(ngModel)]="empresa.cnpj" required placeholder="Cnpj" type="text">
+                    <input matInput [formControl]="cnpj" [(ngModel)]="empresa.cnpj" required placeholder="Cnpj" [mask]="maskCnpj" type="text">
                     <mat-error *ngIf="cnpj.hasError('required')">Digite um cnpj</mat-error>
                 </mat-form-field>
 

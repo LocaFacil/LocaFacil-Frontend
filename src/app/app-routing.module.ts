@@ -5,6 +5,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-info.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
 import { CompanyUpdateComponent } from './components/company-update/company-update.component';
 import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-create.component';
 import { DumpsterDeleteComponent } from './components/dumpster-delete/dumpster-delete.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'solicitacao', component: SolicitacaoComponent },
       { path: 'client/info/:id', component: ClienteInfoComponent },
       { path: 'clientManager', component: ClienteListComponent },
+      { path: 'companyManager', component: CompanyListComponent },
       { path: 'client/update/:id', component: ClienteUpdateComponent },
       { path: 'company/update/:id', component: CompanyUpdateComponent },
       { path: 'dumpster/create', component: DumpsterCreateComponent },

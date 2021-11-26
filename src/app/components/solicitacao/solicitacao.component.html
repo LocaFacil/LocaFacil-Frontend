@@ -4,8 +4,8 @@
         <form class="login100-form validate-form text-center">
 
             <mat-radio-group class="section" aria-label="Select an option">
-                <mat-radio-button  class="peq" (click)="tamanhoPeq()" color="primary" value="1" checked>Caçamba pequena</mat-radio-button>
-                <mat-radio-button class="gran" (click)="tamanhoGrande()" color="primary" value="2">Caçamba Grande</mat-radio-button>
+                <mat-radio-button  class="peq" (click)="tamanhoPeq()" color="primary" value="1" checked>Caçamba média 3x3</mat-radio-button>
+                <mat-radio-button class="gran" (click)="tamanhoGrande()" color="primary" value="2">Caçamba Grande 5x3</mat-radio-button>
             </mat-radio-group>
 
             
@@ -32,21 +32,13 @@
                 <mat-error *ngIf="tiposControl.hasError('required')">Selecione Tipo de entulho</mat-error>
             </mat-form-field>
 
-            <mat-form-field class="dateStart" appearance="outline">
+            <mat-form-field class="dateStart" color="accent" appearance="outline">
                 <mat-label>Data de Entrega</mat-label>
                 <input matInput [matDatepicker]="picker1" [formControl]="dateInicial" [(ngModel)]="solicitacao.dateinit">
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
 
-            <mat-form-field class="dateFim" appearance="outline">
-                <mat-label>Data de recolhimento</mat-label>
-                <input matInput [matDatepicker]="picker2" [formControl]="dateFim" [(ngModel)]="solicitacao.datefinal">
-                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
-            
-            
             <div class="container-login100-form-btn">
 
                     <button (click)="create()" class="login101-form-btn">

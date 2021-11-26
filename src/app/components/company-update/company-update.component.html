@@ -8,25 +8,25 @@
 
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Nome</mat-label>
-                    <input matInput [formControl]="nome" [(ngModel)]="companyUpade.name" required placeholder="Nome Empresa" type="text">
+                    <input matInput [formControl]="nome" [(ngModel)]="companyUpade.name" placeholder="Nome Empresa" type="text" readonly>
                     <mat-error *ngIf="nome.hasError('required')">Digite um nome</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput [formControl]="email" [(ngModel)]="companyUpade.email" required placeholder="Email Empresa" type="text">
+                    <input matInput [formControl]="email" [(ngModel)]="companyUpade.email"  placeholder="Email Empresa" type="text" readonly>
                     <mat-error *ngIf="email.hasError('required')">Digite seu email</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Telefone</mat-label>
-                    <input matInput [(ngModel)]="companyUpade.phone" required placeholder="Telefone" type="text" name="telefone">
+                    <input matInput [(ngModel)]="companyUpade.phone" [mask]="maskPhone" placeholder="Telefone" type="text" name="telefone" readonly>
                 </mat-form-field>
 
 
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Cnpj</mat-label>
-                    <input matInput [(ngModel)]="companyUpade.cnpj" required placeholder="Cnjp" type="text" name="Cnjp">
+                    <input matInput [(ngModel)]="companyUpade.cnpj" [mask]="maskCnpj" placeholder="Cnjp" type="text" name="Cnjp" readonly>
                 </mat-form-field>
 
                 <mat-form-field class="wrap-input100" appearance="outline">

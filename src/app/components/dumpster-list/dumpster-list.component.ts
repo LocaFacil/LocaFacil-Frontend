@@ -17,7 +17,7 @@ export class DumpsterListComponent implements OnInit {
 
   idCompany = this.route.snapshot.paramMap.get('id');
   
-  displayedColumns: string[] = ['position', 'name', 'weight', 'situacao', 'acoes'];
+  displayedColumns: string[] = ['position', 'name', 'situacao', 'acoes'];
   dataSource = new MatTableDataSource<dumpsterList>(this.ELEMENT_DATA);
 
   constructor( private service: CreateuserService,  private route: ActivatedRoute, private router: Router) { }
@@ -41,6 +41,16 @@ export class DumpsterListComponent implements OnInit {
       this.dataSource = new MatTableDataSource<dumpsterList>(resposta);
       this.dataSource.paginator = this.paginator;
     })
+  }
+
+  getStatus(status: string): string {
+    if (status == 'WAITING')
+        return  'ESPERANDO'
+    else if (status == 'BUSY')
+        return 'OCUPADO'
+    else 
+      return 'DISPONÍVEL'
+      
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

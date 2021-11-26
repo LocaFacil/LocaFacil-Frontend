@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   successfullLogin(authToken: string) {
-    // debugger;
+    
     localStorage.setItem('token', authToken);
   }
 

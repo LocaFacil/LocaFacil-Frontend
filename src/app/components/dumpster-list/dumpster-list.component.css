@@ -33,6 +33,12 @@ td {
     color: #000000;
 }
 
+.card {
+    background: #cce5ff;
+    border-color: #b8daff;
+    font-weight: bold;
+}
+
 .custom-tooltip {
     background-color: #000000;
     color: #ffffff;

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   logar() {
-    // debugger;
+    
     this.service.authenticate(this.creds).subscribe(resposta => {
       this.service.successfullLogin(resposta.headers.get('Authorization').substring(7));
       var info = resposta.body
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       if (infoType[2] === '[ROLE_USER]') {
       this.router.navigate(['solicitacao'])
       } else {
-        this.router.navigate(['clientManager'])
+        this.router.navigate(['companyManager'])
       }
       }, () => {
       this.toast.error('Verifique Email e/ou senha. Tente novamente.', 'Falha ao realizar login!');

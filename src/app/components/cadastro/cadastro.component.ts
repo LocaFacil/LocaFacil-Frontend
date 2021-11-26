@@ -38,6 +38,9 @@ export class CadastroComponent implements OnInit {
   cnpj = new FormControl(null, Validators.minLength(14));
 
 
+  maskCnpj = '00.000.000/0000-00';
+  maskPhone = '00 0000-0000||00 0 0000-0000';
+
 
   constructor(
     private service: CreateuserService,

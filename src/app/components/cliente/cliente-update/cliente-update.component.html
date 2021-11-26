@@ -8,13 +8,13 @@
 
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Nome</mat-label>
-                    <input matInput [formControl]="nome" [(ngModel)]="clientUpade.name" required placeholder="Nome" type="text">
+                    <input matInput [formControl]="nome" [(ngModel)]="clientUpade.name"  placeholder="Nome" type="text" readonly>
                     <mat-error *ngIf="nome.hasError('required')">Digite seu nome</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="w100" appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput [formControl]="email" [(ngModel)]="clientUpade.email" required placeholder="Email" type="text">
+                    <input matInput [formControl]="email" [(ngModel)]="clientUpade.email"  placeholder="Email" type="text" readonly>
                     <mat-error *ngIf="email.hasError('required')">Digite seu email</mat-error>
                 </mat-form-field>
 

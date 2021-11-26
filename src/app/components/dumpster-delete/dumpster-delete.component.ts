@@ -50,7 +50,7 @@ export class DumpsterDeleteComponent implements OnInit {
   id = localStorage.getItem('Id');
 
   delete(): void {
-    debugger;
+    
     this.service.delete(this.createDumpster.id).subscribe(() => {
       this.toast.success('Caçamba deletada com sucesso', 'Delete');
       this.router.navigate([`dumpster/list/${this.id}`])

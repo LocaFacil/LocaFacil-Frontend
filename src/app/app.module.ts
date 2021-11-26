@@ -51,7 +51,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { SolicitacaoDialogComponent } from './components/solicitacao/solicitacao-dialog/solicitacao-dialog.component';
 import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
+import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -70,6 +73,8 @@ import { registerLocaleData } from "@angular/common";
     DumpsterDeleteComponent,
     ClienteInfoComponent,
     SolicitacaoDialogComponent,
+    TermsDialogComponent,
+    CompanyListComponent,
   ],
   imports: [
     BrowserModule,

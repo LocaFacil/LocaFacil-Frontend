@@ -9,11 +9,11 @@ import { CreateuserService } from 'src/app/services/createuser.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-cliente-list',
-  templateUrl: './cliente-list.component.html',
-  styleUrls: ['./cliente-list.component.css']
+  selector: 'app-company-list',
+  templateUrl: './company-list.component.html',
+  styleUrls: ['./company-list.component.css']
 })
-export class ClienteListComponent implements OnInit {
+export class CompanyListComponent implements OnInit {
   ELEMENT_DATA: ClientList[] = []
 
   clientEntregar: ClientEntregar = {
@@ -29,7 +29,7 @@ export class ClienteListComponent implements OnInit {
     statusid: ''
   }
 
-  displayedColumns: string[] = ['position', 'weight', 'dateinit', 'datefinal', 'acoes'];
+  displayedColumns: string[] = ['position', 'weight', 'address', 'addressnum', 'dateinit', 'datefinal', 'acoes'];
   dataSource = new MatTableDataSource<ClientList>(this.ELEMENT_DATA);
   id: string;
   entregue: any;
@@ -38,7 +38,6 @@ export class ClienteListComponent implements OnInit {
   constructor( private service: CreateuserService,  private route: ActivatedRoute, private router: Router, private  toast: ToastrService,) { }
 
   ngOnInit(): void {
-    this.id = localStorage.getItem('Id');
     this.findAll();
   }
 
@@ -52,38 +51,35 @@ export class ClienteListComponent implements OnInit {
 
   findAll(){
     
-    this.service.findAllUser(this.id).subscribe(resposta => {
+    this.service.findAllCompany().subscribe(resposta => {
       
       this.ELEMENT_DATA = resposta
-
-      let newDateStart: moment.Moment = moment.utc(this.ELEMENT_DATA[0].dateinit).local();
-      let newDateSFinal: moment.Moment = moment.utc(this.ELEMENT_DATA[0].datefinal).local();
-      this.ELEMENT_DATA[0].dateinit = newDateStart.format("DD/MM/YYYY");
-      this.ELEMENT_DATA[0].datefinal = newDateSFinal.format("DD/MM/YYYY");
 
       this.dataSource = new MatTableDataSource<ClientList>(resposta);
       this.dataSource.paginator = this.paginator;
     })
   }
 
-  entregar(id): void {
+  entrege(id): void {
   this.clientEntregar.id = id;
-   this.service.entregarDumpster(this.clientEntregar).subscribe(resposta => {
+   this.service.entregeDumpster(this.clientEntregar).subscribe(resposta => {
      this.toast.success('Ação realizada com sucesso', 'Entregue');
-
+    location.reload();
    }, ex => {
      this.toast.error('Erro ao solicitar entrega de caçamba, verifique os dados. Tente novamente.', 'Falha!');
    })
  
  }
 
- renovar(id): void {
+ recolhe(id): void {
+   
   this.clientEntregar.id = id;
-   this.service.renovacaoDumpster(this.clientEntregar).subscribe(resposta => {
-     this.toast.success('Ação realizada com sucesso', 'Renovação');
+   this.service.recolheDumpster(this.clientEntregar).subscribe(resposta => {
+     this.toast.success('Ação realizada com sucesso', 'Recolhimento');
+     location.reload();
 
    }, ex => {
-     this.toast.error('Erro ao solicitar renovação de caçamba, verifique os dados. Tente novamente.', 'Falha!');
+     this.toast.error('Erro ao solicitar recolhimento de caçamba, verifique os dados. Tente novamente.', 'Falha!');
    })
  
  }
