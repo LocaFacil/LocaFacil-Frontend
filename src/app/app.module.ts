@@ -46,7 +46,6 @@ import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-c
 import { DumpsterListComponent } from './components/dumpster-list/dumpster-list.component';
 import { UpdateDumpsterComponent } from './components/update-dumpster/update-dumpster.component';
 import { DumpsterDeleteComponent } from './components/dumpster-delete/dumpster-delete.component';
-import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-info.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SolicitacaoDialogComponent } from './components/solicitacao/solicitacao-dialog/solicitacao-dialog.component';
 import localePt from "@angular/common/locales/pt";
@@ -71,7 +70,6 @@ registerLocaleData(localePt);
     DumpsterListComponent,
     UpdateDumpsterComponent,
     DumpsterDeleteComponent,
-    ClienteInfoComponent,
     SolicitacaoDialogComponent,
     TermsDialogComponent,
     CompanyListComponent,

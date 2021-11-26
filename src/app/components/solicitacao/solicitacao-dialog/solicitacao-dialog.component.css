@@ -12,26 +12,6 @@ textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
-
-textarea:focus::-webkit-input-placeholder { color:transparent; }
-textarea:focus:-moz-placeholder { color:transparent; }
-textarea:focus::-moz-placeholder { color:transparent; }
-textarea:focus:-ms-input-placeholder { color:transparent; }
-
-input::-webkit-input-placeholder { color: #999999; }
-input:-moz-placeholder { color: #999999; }
-input::-moz-placeholder { color: #999999; }
-input:-ms-input-placeholder { color: #999999; }
-
-textarea::-webkit-input-placeholder { color: #999999; }
-textarea:-moz-placeholder { color: #999999; }
-textarea::-moz-placeholder { color: #999999; }
-textarea:-ms-input-placeholder { color: #999999; }
-
 /*---------------------------------------------*/
 button {
     outline: none !important;
@@ -93,72 +73,6 @@ iframe {
 
 .show:focus {
   color: #57b846;
-}
-
-/*------------------------------------------------------------------
-[ Focus ]*/
-.focus-input100 {
-  display: block;
-  position: absolute;
-  border-radius: 25px;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 0px 0px 0px;
-  color: rgba(87,184,70, 0.8);
-}
-
-.input100:focus + .focus-input100 {
-  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
-  animation: anim-shadow 0.5s ease-in-out forwards;
-}
-
-@-webkit-keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 70px 25px;
-    opacity: 0;
-  }
-}
-
-@keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 70px 25px;
-    opacity: 0;
-  }
-}
-
-.symbol-input100 {
-  font-size: 15px;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  border-radius: 25px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 35px;
-  pointer-events: none;
-  color: #666666;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-
-
-.input100:focus + .focus-input100 + .symbol-input100 {
-  color: #57b846;
-  padding-left: 28px;
 }
 
 /*------------------------------------------------------------------
@@ -308,65 +222,7 @@ width: 100%;
   width: 97%;
 }
 
-.txt2 {
-    font-family: Bold;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #1126EA;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
-  }
-  
-  .txt2:hover {
-    text-decoration: underline;
-    color:#57b846;
-  }
-  
-  .txt3 {
-    text-align: center;
-    font-family: Poppins-Bold;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 36px;
-    width: 100%;
-    display: block;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  color: #666666;
-  }
-  
-  
-  .txt4 {
-  width: 100%;
-  display: block;
-  text-align: center;
-  font-family: Poppins-Bold;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 36px;
-  color: #666666;
-  }
-  
-  
-  .txt5 {
-    width: 100%;
-    text-align:  center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Poppins-Bold;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 28px;
-    color: #666666;
-  }
-  
+
   
    /*//////////////////////////////////////////////////////////////////
   [ login ]*/
@@ -509,29 +365,7 @@ width: 100%;
     font-size: 12px;
   }
 
-  .valid {
-    color: green;
-    display: flex;
-    justify-content: start;
-  }
 
-  .valid:before {
-    position: relative;
-    left: -10px;
-    content: ' \2714';
-  }
-
-  .invalid {
-    color: red;
-    display: flex;
-    justify-content:start;
-  }
-  
-  .invalid:before {
-    position: relative;
-    left: -10px;
-    content: ' \2716';
-  }
   /*------------------------------------------------------------------
   [ Responsive ]*/
   

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { ClienteInfoComponent } from './components/cliente/cliente-info/cliente-info.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
   {
     path: '', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'solicitacao', component: SolicitacaoComponent },
-      { path: 'client/info/:id', component: ClienteInfoComponent },
       { path: 'clientManager', component: ClienteListComponent },
       { path: 'companyManager', component: CompanyListComponent },
       { path: 'client/update/:id', component: ClienteUpdateComponent },
