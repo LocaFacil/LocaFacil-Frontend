@@ -1,5 +1,34 @@
 <div class="conteiner">
   <mat-card class="card" *ngIf="ELEMENT_DATA.length == 0" >Nenhum registro encontrado!</mat-card>
+   <div id="container" *ngIf="ELEMENT_DATA.length != 0"> 
+      <div class="wrap-login100" >
+        <p class="title">Caçambas Livres</p>
+        <p class="total">
+          {{livres}}
+        </p>
+
+        <div class="container-login100-form-btn">
+
+          <button class="login101-form-btn" routerLink="cacambas/livres">
+              Visualizar
+          </button>
+        </div>
+      </div>
+
+      <div class="wrap-login100 end">
+        <p class="title">Caçambas Ocupadas</p>
+        <p class="total">
+          {{ocupadas}}
+        </p>
+
+        <div class="container-login100-form-btn">
+
+          <button class="login101-form-btn" routerLink="cacambas/ocupadas">
+              Visualizar
+          </button>
+        </div>
+      </div>
+  </div>
     <div class="mat-elevation-z8" *ngIf="ELEMENT_DATA.length != 0">
         <table mat-table [dataSource]="dataSource">
       

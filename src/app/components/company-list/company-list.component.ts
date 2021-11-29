@@ -33,12 +33,16 @@ export class CompanyListComponent implements OnInit {
   dataSource = new MatTableDataSource<ClientList>(this.ELEMENT_DATA);
   id: string;
   entregue: any;
+  livres: any;
+  ocupadas: any;
   
 
   constructor( private service: CreateuserService,  private route: ActivatedRoute, private router: Router, private  toast: ToastrService,) { }
 
   ngOnInit(): void {
     this.findAll();
+    this.cacambasLivres();
+    this.cacambasOcupada();
   }
 
   navigateUpdade(id) {
@@ -47,6 +51,22 @@ export class CompanyListComponent implements OnInit {
 
   navigateDelete(id) {
     this.router.navigate([`dumpster/delete/${id}`])
+  }
+
+  cacambasLivres() {
+    this.service.cacambasLivres().subscribe(resposta => {
+      
+      this.livres = resposta.length;
+
+    })
+  }
+
+  cacambasOcupada() {
+    this.service.cacambasOcupada().subscribe(resposta => {
+
+      this.ocupadas = resposta.length;
+
+    })
   }
 
   findAll(){
@@ -70,6 +90,8 @@ export class CompanyListComponent implements OnInit {
    })
  
  }
+
+
 
  recolhe(id): void {
    

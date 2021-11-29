@@ -2,7 +2,7 @@
 .conteiner {
     width: 90%;
     margin: auto;
-    padding-top: 10%;
+    padding-top: 3%;
 }
 
 table {
@@ -32,6 +32,88 @@ th {
 td {
     color: #000000;
 }
+
+
+.wrap-login100 {
+    width: 300px;
+    height: 160px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    display: inline-block;
+    justify-content:center;
+    padding:  10px 10px 10px 10px;
+    margin-bottom: 50px;
+    box-shadow: 3px 3px 3px rgb(94, 89, 89);
+  }
+
+  .title {
+      font-size: 20px;
+      text-align: center;
+      display: block;
+      color: #666666;
+  }
+
+  .total {
+    text-align: center;
+    display: block;
+    font-size: 40px;
+    padding-top: 20px;
+  }
+
+  .container-login100-form-btn {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    padding-top: 15px;
+  }
+
+  .login101-form-btn {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    box-shadow: 0 5px 0 #165a0a;
+    
+    height: 50px;
+    width: 50%;
+    border-radius: 25px;
+    background: #57b846;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    
+    }
+    
+    .login101-form-btn:hover {
+      background: #333333;
+      box-shadow: 0 5px 0 #000000;
+    }
+  
+    .login101-form-btn:active {
+      position: relative;
+      top: 5px;
+      box-shadow: none;
+    }
+    
+    .login101-form-btn:disabled {
+      background: #9aa198;
+      box-shadow: none;
+    }
+
+    #container {
+        display: flex;
+        justify-content: space-between;
+    }
 
 .custom-tooltip {
     background-color: #000000;

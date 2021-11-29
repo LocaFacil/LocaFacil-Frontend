@@ -220,7 +220,7 @@ button:hover {
     }
   
     .login100-form {
-      width: 50%;
+      width: 70%;
     }
   }
   
@@ -231,6 +231,14 @@ button:hover {
   
     .login100-form {
       width: 100%;
+    }
+
+  }
+
+  @media (max-width: 375px) {
+    .peq {
+      padding-right: 10px;
+      
     }
 
   }

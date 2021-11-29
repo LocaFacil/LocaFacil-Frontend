@@ -250,14 +250,21 @@ padding: 0 25px;
     }
   
     .login100-form {
-      width: 50%;
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 791px) {
+   
+    .login100-form {
+      width: 90%;
     }
   }
   
   @media (max-width: 767px) {
     .wrap-login100 {
       height: 500px;
-      padding: 30px 80px 33px 80px;
+      padding: 30px 25px 33px 25px;
     }
   
     .login100-pic {
@@ -291,9 +298,9 @@ padding: 0 25px;
       font-size: 13px;
     }
   
-    .login100-form-title {
+    /* .login100-form-title {
       display: none;
-    }
+    } */
   
     .login100-form {
       width: 100%;

@@ -278,7 +278,7 @@ width: 100%;
   
   @media (max-width: 1092px) {
     .wrap-login100 {
-      height: 500px;
+      /* height: 500px; */
       padding: 30px 90px 33px 85px;
     }
   
@@ -289,8 +289,11 @@ width: 100%;
     .login100-form {
       width: 50%;
     }
-    .empresa-form {
+    /* .empresa-form {
       width: 50%;
+    } */
+    .section {
+      padding-top: 9%;
     }
   }
   
@@ -305,8 +308,11 @@ width: 100%;
       height: 230px;
       margin: 0 auto;
     }
-  
 
+    .empresa-form {
+     padding-top: 11%;
+    }
+  
     .img1 {
       display: flex;
       align-items: center;
@@ -334,10 +340,15 @@ width: 100%;
     .login100-form-title {
       display: none;
     }
+
+    .section {
+      padding-top: 2%;
+    }
   
     .login100-form {
       width: 100%;
       margin: 0 auto;
+      padding-top: 12%;
     }
 
     .empresa-form {
@@ -351,6 +362,21 @@ width: 100%;
   
     .login100-form-btn {
       width: 115px;
+    }
+  
+  }
+
+  @media (max-width: 709px) {
+    .empresa-form {
+      padding: 0;
+      padding-top: 12%;
+    }
+  
+  }
+
+@media (max-width: 689px) {
+    .pl-10 {
+      padding-left: 0px;
     }
   
   }

@@ -5,10 +5,23 @@ mat-drawer-container {
     height: 100%;
 }
 
+.containerMedia {
+    display: none;
+}
+
 .sidenav {
     width: 13rem;
     color: white;
     background-color: #666666;
+}
+
+.user {
+    font-size: 16px;
+    align-items: center;
+}
+
+.sidenavMedia {
+ display: none;
 }
 
 img {
@@ -22,9 +35,11 @@ img {
     color: #FC9722;
 }
 
+
 .sidenav i {
     margin-right: .6rem;
 }
+
 
 .colorFocus:hover {
     background-color: rgb(53, 47, 36);
@@ -42,4 +57,27 @@ img {
     background: #666666;
     
 }
+
+
+/* @media (max-width: 859px) {
+    .containerMedia {
+        display: flex;
+        height: 100%;
+    }
+    .sidenavMedia {
+        display: flex;
+        width: 13rem;
+        color: white;
+        background-color: #666666;
+    }
+
+    .sidenavMedia a {
+        color: #FC9722;
+    }
+
+    .sidenavMedia i {
+        margin-right: .6rem;
+    }
+  
+  } */
 

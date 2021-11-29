@@ -52,6 +52,8 @@ import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
 import { TermsDialogComponent } from './components/terms-dialog/terms-dialog.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
+import { DumpsterLivreComponent } from './components/dumpster-livre/dumpster-livre.component';
+import { DumpsterOcupadoComponent } from './components/dumpster-ocupado/dumpster-ocupado.component';
 
 registerLocaleData(localePt);
 
@@ -73,6 +75,8 @@ registerLocaleData(localePt);
     SolicitacaoDialogComponent,
     TermsDialogComponent,
     CompanyListComponent,
+    DumpsterLivreComponent,
+    DumpsterOcupadoComponent,
   ],
   imports: [
     BrowserModule,

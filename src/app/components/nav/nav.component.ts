@@ -18,6 +18,7 @@ export class NavComponent implements OnInit {
   resposta = null;
   data: string;
   type: string;
+  nome: string;
   
 
   constructor(private router: Router,
@@ -29,6 +30,7 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     //this.router.navigate(['solicitacao'])
     this.type = localStorage.getItem('TypeUser');
+    this.nome = localStorage.getItem('Nome');
   }
 
   id = localStorage.getItem('Id');

@@ -289,7 +289,7 @@ padding: 0 25px;
   /*------------------------------------------------------------------
   [  ]*/
   .login100-form {
-    width: 40%;
+    width: 60%;
     height: auto;
   }
   
@@ -344,7 +344,7 @@ padding: 0 25px;
   /*------------------------------------------------------------------
   [ Responsive ]*/
   
-  
+
   @media (max-width: 1092px) {
     .wrap-login100 {
       height: 500px;
@@ -356,7 +356,7 @@ padding: 0 25px;
     }
   
     .login100-form {
-      width: 50%;
+      width: 100%;
     }
   }
   
@@ -395,10 +395,6 @@ padding: 0 25px;
   
     .txt5 {
       font-size: 13px;
-    }
-  
-    .login100-form-title {
-      display: none;
     }
   
     .login100-form {

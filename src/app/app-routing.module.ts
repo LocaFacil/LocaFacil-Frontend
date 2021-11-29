@@ -9,6 +9,8 @@ import { CompanyUpdateComponent } from './components/company-update/company-upda
 import { DumpsterCreateComponent } from './components/dumpster-create/dumpster-create.component';
 import { DumpsterDeleteComponent } from './components/dumpster-delete/dumpster-delete.component';
 import { DumpsterListComponent } from './components/dumpster-list/dumpster-list.component';
+import { DumpsterLivreComponent } from './components/dumpster-livre/dumpster-livre.component';
+import { DumpsterOcupadoComponent } from './components/dumpster-ocupado/dumpster-ocupado.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { RedefinirComponent } from './components/redefinir/redefinir.component';
@@ -28,6 +30,8 @@ const routes: Routes = [
       { path: 'solicitacao', component: SolicitacaoComponent },
       { path: 'clientManager', component: ClienteListComponent },
       { path: 'companyManager', component: CompanyListComponent },
+      { path: 'companyManager/cacambas/livres', component: DumpsterLivreComponent },
+      { path: 'companyManager/cacambas/ocupadas', component: DumpsterOcupadoComponent },
       { path: 'client/update/:id', component: ClienteUpdateComponent },
       { path: 'company/update/:id', component: CompanyUpdateComponent },
       { path: 'dumpster/create', component: DumpsterCreateComponent },

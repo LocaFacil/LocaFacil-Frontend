@@ -37,9 +37,11 @@ export class LoginComponent implements OnInit {
       var infoUser = info.split("\n")
       var infoClient = infoUser[0].split(" ");
       var infoType = infoUser[1].split(" ");
-      
+      var infoNome = infoUser[2].split(" ");
+
       localStorage.setItem('Id', infoClient[1]);
       localStorage.setItem('TypeUser', infoType[2]);
+      localStorage.setItem('Nome', infoNome[2])
 
       if (infoType[2] === '[ROLE_USER]') {
       this.router.navigate(['solicitacao'])

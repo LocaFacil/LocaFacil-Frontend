@@ -35,6 +35,16 @@ export class CreateuserService {
     return this.http.get<dumpsterList[]>(`${API_CONFIG.baseUrl}/dumpster/filter?company_id=${id}`);
   }
 
+  livres(): Observable <dumpsterList[]> {
+    
+    return this.http.get<dumpsterList[]>(`${API_CONFIG.baseUrl}/dumpster/status/1`);
+  }
+
+  ocupados(): Observable <dumpsterList[]> {
+    
+    return this.http.get<dumpsterList[]>(`${API_CONFIG.baseUrl}/dumpster/status/2`);
+  }
+
   findAllUser(id: any): Observable <ClientList[]> {
     return this.http.get<ClientList[]>(`${API_CONFIG.baseUrl}/request/all/${id}`);
   }
@@ -44,6 +54,16 @@ export class CreateuserService {
     return this.http.get<ClientList[]>(`${API_CONFIG.baseUrl}/request/lists`);
   }
 
+  cacambasLivres(): Observable <ClientList[]> {
+   
+    return this.http.get<ClientList[]>(`${API_CONFIG.baseUrl}/dumpster/status/1`);
+  }
+
+  cacambasOcupada(): Observable <ClientList[]> {
+   
+    return this.http.get<ClientList[]>(`${API_CONFIG.baseUrl}/dumpster/status/2`);
+  }
+  
   findAllTermo(id: any): Observable <UserInfo> {
     return this.http.get<UserInfo>(`${API_CONFIG.baseUrl}/user/checktermsuse/${id}`);
   }
