@@ -46,7 +46,14 @@
       <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
-      <!-- <span class="user"><b>Usuário: </b>{{nome}}</span> -->
+      
+     <span class="user">Usuário: <b>{{nome}}</b></span>
+
+     <a class="sair" (click)="logout()">
+        <i class="material-icons sair-label">logout</i>
+        <span class="sair-label">Sair</span>
+    </a>
+
       <router-outlet></router-outlet>
     </div>
   

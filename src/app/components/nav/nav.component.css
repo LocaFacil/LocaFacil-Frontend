@@ -15,9 +15,21 @@ mat-drawer-container {
     background-color: #666666;
 }
 
+
 .user {
     font-size: 16px;
     align-items: center;
+    padding-left: 80%;
+    font-size: 17px;
+}
+
+.sair {
+    padding-left: 3%;
+    cursor: pointer;
+}
+
+.sair-label {
+    font-size: 18px;
 }
 
 .sidenavMedia {
@@ -59,25 +71,68 @@ img {
 }
 
 
-/* @media (max-width: 859px) {
-    .containerMedia {
-        display: flex;
-        height: 100%;
-    }
-    .sidenavMedia {
-        display: flex;
-        width: 13rem;
-        color: white;
-        background-color: #666666;
-    }
-
-    .sidenavMedia a {
-        color: #FC9722;
-    }
-
-    .sidenavMedia i {
-        margin-right: .6rem;
+  @media (max-width: 1700px) {
+    .user {
+        padding-left: 75%;
     }
   
-  } */
+  }
+
+  @media (max-width: 1315px) {
+    .user {
+        padding-left: 70%;
+    }
+  
+  }
+
+  @media (max-width: 1128px) {
+    .user {
+        padding-left: 65%;
+    }
+  
+  }
+
+  @media (max-width: 974px) {
+    .user {
+        padding-left: 60%;
+    }
+  
+  }
+
+  @media (max-width: 871px) {
+    .user {
+        padding-left: 55%;
+    }
+  
+  }
+
+  @media (max-width: 795px) {
+    .user {
+        padding-left: 50%;
+    }
+  
+  }
+
+  @media (max-width: 733px) {
+    .user {
+        padding-left: 45%;
+    }
+  
+  }
+
+  
+  @media (max-width: 684px) {
+    .user {
+        padding-left: 40%;
+    }
+  
+  }
+
+  @media (max-width: 375px) {
+    .user {
+        padding-left: 25%;
+    }
+  
+  }
+
 
