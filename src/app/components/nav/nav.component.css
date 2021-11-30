@@ -143,9 +143,15 @@ img {
   
   }
 
+  @media (max-width: 400px) {
+    .user {
+        padding-left: 10%;
+    }
+  }
+
   @media (max-width: 375px) {
     .user {
-        padding-left: 15%;
+        padding-left: 10%;
     }
   
   }
