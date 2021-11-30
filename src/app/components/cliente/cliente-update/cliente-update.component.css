@@ -253,7 +253,7 @@ padding: 0 25px;
   
   .wrap-login100 {
     width: 960px;
-    height: 580px;
+    height: 639px;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -265,7 +265,7 @@ padding: 0 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
-    padding: 100px 130px 33px 95px;
+    padding: 36px 130px 33px 95px;
     box-shadow: 3px 3px 3px rgb(94, 89, 89);
   }
   
@@ -347,8 +347,8 @@ padding: 0 25px;
 
   @media (max-width: 1092px) {
     .wrap-login100 {
-      height: 500px;
-      padding: 100px 90px 33px 85px;
+      height: 643px;
+      padding: 31px 90px 33px 85px;
     }
   
     .login100-pic {
@@ -362,7 +362,7 @@ padding: 0 25px;
   
   @media (max-width: 767px) {
     .wrap-login100 {
-      height: 500px;
+      height: 635px;
       padding: 30px 80px 33px 80px;
     }
   
@@ -421,7 +421,7 @@ padding: 0 25px;
   
   @media (max-width: 414px) {
     .wrap-login100 {
-      height: 470px;
+      height: 627px;
       padding: 20px 15px 33px 15px;
     }
   

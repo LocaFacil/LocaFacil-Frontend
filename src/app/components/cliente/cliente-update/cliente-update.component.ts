@@ -17,8 +17,12 @@ export class ClienteUpdateComponent implements OnInit {
     name: '',
     email: '',
     password: '',
-
+    cpf: '',
+    address: '',
+    addressnum: ''
   }
+
+  maskCpf = '000.000.000-00';
 
 
   hide = true;
@@ -50,7 +54,9 @@ export class ClienteUpdateComponent implements OnInit {
       this.clientUpade.name = resposta.name;
       this.clientUpade.email = resposta.email;
       this.clientUpade.password = resposta.password;
-      //this.clientUpade = resposta;
+      this.clientUpade.cpf = resposta.cpf;
+      this.clientUpade.address = resposta.address;
+      this.clientUpade.addressnum = resposta.addressnum;
     })
   }
 

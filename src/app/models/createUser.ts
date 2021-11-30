@@ -30,6 +30,9 @@ export interface UpdateUser {
     id: any;
     name: string;
     email: string;
+    cpf?: any;
+    address?: any;
+    addressnum?: any;
     password: string;
 }
 

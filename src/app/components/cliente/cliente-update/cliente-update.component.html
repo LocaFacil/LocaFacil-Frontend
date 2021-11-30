@@ -18,6 +18,21 @@
                     <mat-error *ngIf="email.hasError('required')">Digite seu email</mat-error>
                 </mat-form-field>
 
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>cpf</mat-label>
+                    <input matInput [(ngModel)]="clientUpade.cpf" mask="{{maskCpf}}"  name="cpf" type="text" readonly>
+                </mat-form-field>
+
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Endereço</mat-label>
+                    <input matInput [(ngModel)]="clientUpade.address" name="endereco" type="text" readonly>
+                </mat-form-field>
+
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Número</mat-label>
+                    <input matInput [(ngModel)]="clientUpade.addressnum"   name="numero" type="text" readonly>
+                </mat-form-field>
+
                 <mat-form-field class="wrap-input100" appearance="outline">
                     <mat-label>Senha</mat-label>
                     <input [(ngModel)]="clientUpade.password" [formControl]="senha" required matInput [type]="hide ? 'password' : 'text'">
