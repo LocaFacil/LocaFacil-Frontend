@@ -34,6 +34,7 @@ export interface UpdateUser {
     address?: any;
     addressnum?: any;
     password: string;
+    termsUse?: any;
 }
 
 export interface UpdateCompany {

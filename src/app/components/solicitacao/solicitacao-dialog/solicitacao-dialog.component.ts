@@ -37,6 +37,7 @@ export class SolicitacaoDialogComponent implements OnInit {
   endereco = new FormControl(null, Validators.minLength(5));
   numero = new FormControl(null, Validators.minLength(1));
   retornoTerms: any;
+  condicao: any;
 
 
 
@@ -49,6 +50,7 @@ export class SolicitacaoDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.clienteInfo.id = localStorage.getItem('Id');
+
   }
 
 
@@ -68,7 +70,7 @@ export class SolicitacaoDialogComponent implements OnInit {
   verifyTerms() { 
     
     this.service.findAllTermo(this.clienteInfo.id).subscribe(resposta => {
-      
+
       this.retornoTerms = resposta;
       if (this.retornoTerms == false) {
         this.openDialogTerms();
@@ -77,6 +79,9 @@ export class SolicitacaoDialogComponent implements OnInit {
   }
 
   create(): void {
+    this.condicao = true;
+    localStorage.setItem('cpf', this.condicao);
+
       this.service.updateInfoClient(this.clienteInfo).subscribe(() => {
         this.toast.success('Informações atualizadas com sucesso', 'Cadastro');
         location.reload();

@@ -24,6 +24,7 @@ export class SolicitacaoComponent implements OnInit {
   idClient: any;
   retorno: any;
   retornoTerms: any;
+  condicao: any;
 
   solicitacao: Solicitacao = {
     id: '',
@@ -109,8 +110,11 @@ export class SolicitacaoComponent implements OnInit {
   verifyInfo() { 
     this.solicitacao.size = 1;
     this.service.findByIdInfo(this.idClient).subscribe(resposta => {
+
+      this.condicao = localStorage.getItem('cpf');
+
       this.retorno = resposta;
-      if (this.retorno == false) {
+      if (this.retorno == false && this.condicao != 'true') {
         this.openDialog();
       } else {
         this.verifyTerms();

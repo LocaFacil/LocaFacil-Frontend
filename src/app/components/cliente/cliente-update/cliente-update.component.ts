@@ -19,7 +19,8 @@ export class ClienteUpdateComponent implements OnInit {
     password: '',
     cpf: '',
     address: '',
-    addressnum: ''
+    addressnum: '',
+    termsUse: true
   }
 
   maskCpf = '000.000.000-00';
