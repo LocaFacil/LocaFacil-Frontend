@@ -56,10 +56,10 @@ export class ClienteListComponent implements OnInit {
       
       this.ELEMENT_DATA = resposta
 
-      let newDateStart: moment.Moment = moment.utc(this.ELEMENT_DATA[0].dateinit).local();
-      let newDateSFinal: moment.Moment = moment.utc(this.ELEMENT_DATA[0].datefinal).local();
-      this.ELEMENT_DATA[0].dateinit = newDateStart.format("DD/MM/YYYY");
-      this.ELEMENT_DATA[0].datefinal = newDateSFinal.format("DD/MM/YYYY");
+      // let newDateStart: moment.Moment = moment.utc(this.ELEMENT_DATA[0].dateinit).local();
+      // let newDateSFinal: moment.Moment = moment.utc(this.ELEMENT_DATA[0].datefinal).local();
+      // this.ELEMENT_DATA[0].dateinit = newDateStart.format("DD/MM/YYYY");
+      // this.ELEMENT_DATA[0].datefinal = newDateSFinal.format("DD/MM/YYYY");
 
       this.dataSource = new MatTableDataSource<ClientList>(resposta);
       this.dataSource.paginator = this.paginator;

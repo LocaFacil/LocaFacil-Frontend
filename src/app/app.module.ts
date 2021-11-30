@@ -30,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatMenuModule} from '@angular/material/menu';
 
 //Compomentes do sistema
 import { NavComponent } from './components/nav/nav.component';
@@ -107,6 +108,7 @@ registerLocaleData(localePt);
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatMenuModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,

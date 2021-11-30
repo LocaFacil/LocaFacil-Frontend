@@ -1,12 +1,18 @@
 <div class="conteiner">
   <mat-card class="card" *ngIf="ELEMENT_DATA.length == 0" >Nenhum registro encontrado!</mat-card>
     <div class="mat-elevation-z8" *ngIf="ELEMENT_DATA.length != 0">
-      <table mat-table [dataSource]="dataSource">
+      <!-- <table mat-table [dataSource]="dataSource"> -->
     
-       
-        <ng-container  matColumnDef="position">
+        <mat-table [dataSource]="dataSource" matSort>
+
+        <!-- <ng-container  matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef> Tamanho da caçamba </th>
           <td mat-cell *matCellDef="let element"> {{element.size === 1 ? 'Caçamba Media' : 'Caçamba Grande'}} </td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Tamanho</mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="Tamanho"> {{element.size === 1 ? 'Caçamba Media' : 'Caçamba Grande'}} </mat-cell>
         </ng-container>
     
         <!-- <ng-container  matColumnDef="name">
@@ -14,22 +20,37 @@
           <td  mat-cell *matCellDef="let element"> {{element.price}} </td>
         </ng-container> -->
     
-        <ng-container matColumnDef="weight">
+        <!-- <ng-container matColumnDef="weight">
           <th mat-header-cell *matHeaderCellDef> Tipo de Entulho </th>
           <td mat-cell *matCellDef="let element"> {{element.typetrash}} </td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="weight">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Entulho </mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="Entulho">{{element.typetrash}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="dateinit">
+        <!-- <ng-container matColumnDef="dateinit">
           <th mat-header-cell *matHeaderCellDef> Data da Entrega </th>
           <td mat-cell *matCellDef="let element" > {{element.dateinit}} </td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="dateinit">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Entrega </mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="Entrega">{{element.dateinit}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="datefinal">
+        <!-- <ng-container matColumnDef="datefinal">
           <th mat-header-cell *matHeaderCellDef> Data de Recolhimento</th>
           <td mat-cell *matCellDef="let element"> {{element.datefinal}} </td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="datefinal">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Recolhimento</mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="Recolhimento">{{element.datefinal}}</mat-cell>
         </ng-container>
     
-        <ng-container matColumnDef="acoes">
+        <!-- <ng-container matColumnDef="acoes">
           <th mat-header-cell *matHeaderCellDef> Ações </th>
           <td mat-cell *matCellDef="let element">
   
@@ -42,11 +63,29 @@
 
             <p *ngIf="element.statusid == 4">Entregue</p>
           </td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="acoes">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Ações</mat-header-cell>
+          <mat-cell *matCellDef="let element" data-label="Ações">
+            <a  (click)="entregar(element.id)" *ngIf="element.statusid != 4">
+              <i matTooltip="Entregar"  matTooltipClass="custom-tooltip" matTooltipPosition="before" class="material-icons edit">done</i>
+            </a>
+            <a (click)="renovar(element.id)" *ngIf="element.statusid != 4">
+              <i matTooltip="Renovar"  matTooltipClass="custom-tooltip" matTooltipPosition="after" class="material-icons delete">autorenew</i>
+            </a>
+
+            <p *ngIf="element.statusid == 4">Entregue</p>
+          </mat-cell>
         </ng-container>
     
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
+      </table> -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
     
       <mat-paginator [pageSizeOptions]="[5, 10, 20]"
                      showFirstLastButtons 

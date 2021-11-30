@@ -15,6 +15,9 @@ mat-drawer-container {
     background-color: #666666;
 }
 
+.menu-responsive {
+    display: none;
+}
 
 .user {
     font-size: 16px;
@@ -110,6 +113,18 @@ img {
     .user {
         padding-left: 50%;
     }
+
+    .menu,.sidenav {
+        display: none;
+    }
+
+    .menu-responsive {
+        display: inline-block;
+        margin: 1rem 0 0 1rem;
+        color: white;
+        background: #666666;
+        
+    }
   
   }
 
@@ -130,7 +145,7 @@ img {
 
   @media (max-width: 375px) {
     .user {
-        padding-left: 25%;
+        padding-left: 15%;
     }
   
   }

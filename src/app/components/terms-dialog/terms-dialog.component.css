@@ -6,3 +6,7 @@
     background: #ff4081;
     color: #fff;
 }
+
+.disc {
+    list-style-type: disc;
+}

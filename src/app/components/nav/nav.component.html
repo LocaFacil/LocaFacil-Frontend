@@ -46,6 +46,24 @@
       <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
+
+        <!-- <button class="menu-responsive" mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+        <button class="menu-responsive" mat-mini-fab [matMenuTriggerFor]="menu" aria-label="botao">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngIf="type === '[ROLE_USER]'" class="" routerLink="solicitacao">Solicitação</button>
+        <button mat-menu-item *ngIf="type === '[ROLE_USER]'" class="" routerLink="solicitacao">Gerenciamento</button>
+        <button mat-menu-item *ngIf="type === '[ROLE_ADMIN]'" class="" routerLink="companyManager">Gerenciamento</button>
+        <button mat-menu-item *ngIf="type === '[ROLE_ADMIN]'" class="" routerLink="dumpster/list/{{id}}">Visualizar Caçambas</button>
+        <button mat-menu-item *ngIf="type === '[ROLE_ADMIN]'" class="" routerLink="dumpster/create">Criar Caçamba</button>
+        <button mat-menu-item *ngIf="type === '[ROLE_USER]'" class=""  routerLink="client/update/{{id}}">Meus Dados</button>
+        <button mat-menu-item *ngIf="type === '[ROLE_ADMIN]'" class="" routerLink="company/update/{{id}}">Meus Dados</button>
+        <button mat-menu-item class="" (click)="logout()">Sair</button>
+        
+        </mat-menu>
+
+        
       
      <span class="user">Usuário: <b>{{nome}}</b></span>
 
