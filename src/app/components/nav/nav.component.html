@@ -53,7 +53,7 @@
         </button>
         <mat-menu #menu="matMenu">
         <button mat-menu-item *ngIf="type === '[ROLE_USER]'" class="" routerLink="solicitacao">Solicitação</button>
-        <button mat-menu-item *ngIf="type === '[ROLE_USER]'" class="" routerLink="solicitacao">Gerenciamento</button>
+        <button mat-menu-item *ngIf="type === '[ROLE_USER]'" class="" routerLink="clientManager">Gerenciamento</button>
         <button mat-menu-item *ngIf="type === '[ROLE_ADMIN]'" class="" routerLink="companyManager">Gerenciamento</button>
         <button mat-menu-item *ngIf="type === '[ROLE_ADMIN]'" class="" routerLink="dumpster/list/{{id}}">Visualizar Caçambas</button>
         <button mat-menu-item *ngIf="type === '[ROLE_ADMIN]'" class="" routerLink="dumpster/create">Criar Caçamba</button>
